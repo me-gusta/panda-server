@@ -1,0 +1,17 @@
+/* Regular Overpass Variable Font */
+@font-face {
+    font-family: 'Overpass';
+    src: url('./Overpass-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic Overpass Variable Font */
+@font-face {
+    font-family: 'Overpass';
+    src: url('./Overpass-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}

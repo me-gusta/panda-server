@@ -3,14 +3,22 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemoon ./src/app.js",
-    "start": "node  src/app.js",
-    "tailwind": "npx @tailwindcss/cli -i ./public/assets/tailwind/input.css -o ./public/assets/tailwind/output.css --watch"
+    "dev": "nodemon ./src/app.js",
+    "start": "node  ./src/app.js",
+    "tailwind": "npx @tailwindcss/cli -i ./public/assets/tailwind/input.css -o ./public/assets/tailwind/output.css --watch",
+    "bot": "nodemon ./src/startBot.js"
   },
   "dependencies": {
+    "@grammyjs/files": "^1.2.0",
+    "@prisma/client": "^6.16.3",
     "@tailwindcss/cli": "^4.1.13",
+    "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "grammy": "^1.38.2",
+    "nodemon": "^3.1.10",
     "nunjucks": "^3.2.4",
+    "prisma": "^6.16.3",
+    "sqlite3": "^5.1.7",
     "tailwindcss": "^4.1.13"
   }
 }

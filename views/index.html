@@ -4,11 +4,78 @@
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="/assets/tailwind/output.css">
     <link rel="stylesheet" href="/assets/neobrutalism/index.min.css">
+    <link rel="stylesheet" href="/assets/font-overpass/overpass.css">
+    <link rel="stylesheet" href="/assets/main.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Website</title>
 </head>
-<body>
+<body class="min-h-dvh">
+<main class="max-w-md px-2 py-8 flex flex-col gap-8 items-center m-auto">
+
+    <div class="avatar avatar-lg bg-[#fbb508]!">
+        <img src="/assets/images/panda.png" alt="Avatar"/>
+    </div>
+
+    <div id="workArea" class="flex flex-col">
+        <div id="pageMain" class="route max-w-md flex flex-col gap-8 items-center">
+            <div>
+                <button data-btn="aiChat" class="nb-button flex! flex-col blue bg-[#837ff5]!">
+                    <b class="text-2xl">Чат с пандой</b>
+                    <i class="text-sm" style="text-transform: none">Панда всегда на связи</i>
+                </button>
+            </div>
+
+            <div class="flex flex-col justify-center">
+                <div class="text-center">
+                    <span>— Помощь по учёбе —</span>
+                </div>
+                <div class="flex flex-col justify-center gap-4">
+                    <button data-btn="konspect" class="nb-button flex! flex-col blue">
+                        <b class="text-2xl">Конспект+</b>
+                        <i class="text-sm" style="text-transform: none">Уберу лишнее, выделю главное</i>
+                    </button>
+                    <button data-btn="zapominator" class="nb-button flex! flex-col blue">
+                        <b class="text-2xl">Запоминатор</b>
+                        <i class="text-sm" style="text-transform: none">Сделаю карточки для запоминания</i>
+                    </button>
+                    <button data-btn="structure" class="nb-button flex! flex-col blue">
+                        <b class="text-2xl">Структурировать</b>
+                        <i class="text-sm" style="text-transform: none">Оформить грамотно, красиво</i>
+                    </button>
+                    <button data-btn="addWater" class="nb-button flex! flex-col blue">
+                        <b class="text-2xl">Добавить воды</b>
+                        <i class="text-sm" style="text-transform: none">Разбавлю текст сохранив смысл</i>
+                    </button>
+                    <button data-btn="extractFrom" class="nb-button flex! flex-col blue">
+                        <b class="text-2xl">Извлечь текст с фото</b>
+                        <i class="text-sm" style="text-transform: none">Неинтересные фото в скучный текст</i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center">
+                <div class="text-center">
+                    <span>— Развлекуха —</span>
+                </div>
+                <div class="flex flex-col justify-center gap-4">
+                    <button data-btn="cheers" class="nb-button flex! flex-col blue">
+                        <b class="text-2xl">Поздравления</b>
+                        <i class="text-sm" style="text-transform: none">Для того самого человека</i>
+                    </button>
+                    <button data-btn="poems" class="nb-button flex! flex-col blue">
+                        <b class="text-2xl">Стихи</b>
+                        <i class="text-sm" style="text-transform: none">Я конечно не Пушкин, но...</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<script src="/assets/routie/routie.min.js"></script>
+<script src="/assets/main.js"></script>
 
 </body>
 </html>

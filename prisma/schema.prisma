@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../data/database.db"
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  telegramID    BigInt         @unique
+  username      String?
+  firstName     String?
+  lastName      String?
+  createdAt     DateTime       @default(now())
+  state         String         @default("initial")
+  data          Json
+  conversations Conversation[]
+}
+
+model Conversation {
+  id     Int   @id @default(autoincrement())
+  userId Int?
+  user   User? @relation(fields: [userId], references: [id])
+}

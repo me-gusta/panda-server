@@ -1,0 +1,6 @@
+body {
+    font-family: 'Overpass', sans-serif;
+    background-color: #fff1e8;
+    background-image: url("/assets/images/bg-pattern.png");
+    overflow-x: hidden;
+}
