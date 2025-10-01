@@ -3,6 +3,8 @@ import { PrismaClient } from '../../generated/prisma/index.js'
 const prisma = new PrismaClient()
 
 export async function getOrCreateUser(ctx) {
+    return {hello: 'true', telegramID: ctx.from.id}
+
     const { id, username, first_name, last_name } = ctx.from
 
     let user = await prisma.user.findUnique({

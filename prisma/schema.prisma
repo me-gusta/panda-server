@@ -16,7 +16,6 @@ model User {
   lastName      String?
   createdAt     DateTime       @default(now())
   state         String         @default("initial")
-  data          Json
   conversations Conversation[]
 }
 

@@ -1,3 +1,5 @@
+import {OpenAI} from 'openai'
+
 const client = new OpenAI({
     apiKey: process.env.AITUNNEL_API_KEY,
     baseURL: 'https://api.aitunnel.ru/v1/'
