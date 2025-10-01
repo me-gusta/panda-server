@@ -10,6 +10,15 @@ const IMAGE_EXTENSIONS = new Set([
     '.bmp', '.tiff', '.tif', '.svg', '.avif', '.heic', '.heif',
 ])
 
+bot.command('set', async (ctx) => {
+    const user = await getOrCreateUser(ctx)
+    user.state = 'quiz'
+    user.data.inout = {
+        input: 'message',
+        output: 'message'
+    }
+})
+
 
 bot.command('reset', async (ctx) => {
     const user = await getOrCreateUser(ctx)
@@ -29,6 +38,9 @@ bot.command('me', async (ctx) => {
 
 bot.command('start', async (ctx) => {
     const user = await getOrCreateUser(ctx)
+    if (user.state === 'halt') {
+
+    }
 
     if (user.state === 'initial') {
         console.log('onboarding started')
@@ -37,7 +49,7 @@ bot.command('start', async (ctx) => {
     }
 
     const keyboard = new InlineKeyboard()
-        .webApp("Open Web App", "http://127.0.0.1:3010")
+        .webApp("Выбрать программу", "http://127.0.0.1:3010")
 
     ctx.reply("Click the button to open the Web App", {
         reply_markup: keyboard,

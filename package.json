@@ -17,6 +17,7 @@
     "grammy": "^1.38.2",
     "nodemon": "^3.1.10",
     "nunjucks": "^3.2.4",
+    "openai": "^6.0.0",
     "prisma": "^6.16.3",
     "sqlite3": "^5.1.7",
     "tailwindcss": "^4.1.13"
