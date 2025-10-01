@@ -4,23 +4,23 @@ import nunjucks from 'nunjucks'
 import {fileURLToPath} from 'url'
 
 
-const app = express()
+const startExpressApp = express()
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-app.use(express.json())
+startExpressApp.use(express.json())
 // app.use(express.urlencoded({extended: false}))
-app.use(express.static(path.join(__dirname, '../public')))
+startExpressApp.use(express.static(path.join(__dirname, '../public')))
 
 const nunjucksConfig = nunjucks.configure('./views', {
     autoescape: true,
-    express: app,
+    express: startExpressApp,
 })
 
-app.get('/', async (req, res) => {
+startExpressApp.get('/', async (req, res) => {
     console.log('aaa')
     res.render('index.html')
 })
 
-app.listen(3010, () => console.log(`Server running on http://localhost:3010`))
+startExpressApp.listen(3010, () => console.log(`Server running on http://localhost:3010`))

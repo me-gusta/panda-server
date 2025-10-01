@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon ./src/app.js",
-    "start": "node  ./src/app.js",
+    "dev": "nodemon src/startExpressApp.js",
+    "start": "node  src/startExpressApp.js",
     "tailwind": "npx @tailwindcss/cli -i ./public/assets/tailwind/input.css -o ./public/assets/tailwind/output.css --watch",
-    "bot": "nodemon ./src/bot.js"
+    "bot": "nodemon ./src/startBot.js",
+    "initdb": "prisma migrate dev --name init && prisma generate"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.899.0",
@@ -17,6 +18,7 @@
     "express": "^5.1.0",
     "grammy": "^1.38.2",
     "mime-types": "^3.0.1",
+    "nanoid": "^5.1.6",
     "nodemon": "^3.1.10",
     "nunjucks": "^3.2.4",
     "openai": "^6.0.0",
