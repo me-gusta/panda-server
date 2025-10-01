@@ -58,3 +58,14 @@ export async function updateUser(user) {
 
     return updatedUser
 }
+
+export async function createConversation(user, data) {
+    const conversation = await prisma.conversation.create({
+        data: {
+            userId: user.id,
+            data
+        },
+    })
+
+    return conversation
+}

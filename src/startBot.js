@@ -2,6 +2,7 @@ import {assertAccept, enableQuiz, nextQuizStep} from './quizes/quiz.js'
 import path from 'path'
 import {bot} from './bot.js'
 import {getOrCreateUser, updateUser} from './utils/db.js'
+import {InlineKeyboard} from 'grammy'
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024  // 5 MB in bytes
 const IMAGE_EXTENSIONS = new Set([
@@ -13,6 +14,7 @@ const IMAGE_EXTENSIONS = new Set([
 bot.command('reset', async (ctx) => {
     const user = await getOrCreateUser(ctx)
     user.state = 'initial'
+    user.data = {}
 
     await updateUser(user)
 })
@@ -28,13 +30,18 @@ bot.command('me', async (ctx) => {
 bot.command('start', async (ctx) => {
     const user = await getOrCreateUser(ctx)
 
-    console.log(user)
-
     if (user.state === 'initial') {
         console.log('onboarding started')
         await enableQuiz(user, 'onboarding')
         return
     }
+
+    const keyboard = new InlineKeyboard()
+        .webApp("Open Web App", "http://127.0.0.1:3010")
+
+    ctx.reply("Click the button to open the Web App", {
+        reply_markup: keyboard,
+    })
 })
 
 // Echo text messages

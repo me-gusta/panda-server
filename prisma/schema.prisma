@@ -24,4 +24,5 @@ model Conversation {
   id     Int   @id @default(autoincrement())
   userId Int?
   user   User? @relation(fields: [userId], references: [id])
+  data   Json
 }
