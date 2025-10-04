@@ -52,47 +52,6 @@ export async function saveContext(ctx) {
     })
 }
 
-export async function getOrCreateUser(ctx) {
-    return {hello: 'true', telegramID: ctx.from.id}
-
-    const {id, username, first_name, last_name} = ctx.from
-
-    let user = await prisma.user.findUnique({
-        where: {telegramID: BigInt(id)},
-    })
-
-    if (!user) {
-        user = await prisma.user.create({
-            data: {
-                telegramID: BigInt(id),
-                username,
-                firstName: first_name,
-                lastName: last_name,
-                state: "initial",       // updated to string default state
-                data: {},               // keep empty JSON object to satisfy non-null Json field
-            },
-        })
-    } else {
-        // Update user details if changed
-        if (
-            user.username !== username ||
-            user.firstName !== first_name ||
-            user.lastName !== last_name
-        ) {
-            user = await prisma.user.update({
-                where: {telegramID: BigInt(id)},
-                data: {
-                    username,
-                    firstName: first_name,
-                    lastName: last_name,
-                },
-            })
-        }
-    }
-    user.telegramID = parseInt(user.telegramID)
-    return user
-}
-
 export function setContext(obj, extension) {
     for (const key in extension) {
         if (Object.prototype.hasOwnProperty.call(extension, key)) {
@@ -127,4 +86,53 @@ export function setContext(obj, extension) {
             }
         }
     }
+}
+
+
+export async function ensureUserExists(ctx) {
+    const {id, username, first_name, last_name} = ctx.from
+
+    let user = await prisma.user.findUnique({
+        where: {telegramID: BigInt(id)},
+    })
+
+    if (!user) {
+        user = await prisma.user.create({
+            data: {
+                telegramID: BigInt(id),
+                username,
+                firstName: first_name,
+                lastName: last_name,
+                programs: []
+            },
+        })
+    } else {
+        // Update user details if changed
+        if (
+            user.username !== username ||
+            user.firstName !== first_name ||
+            user.lastName !== last_name
+        ) {
+            user = await prisma.user.update({
+                where: {telegramID: BigInt(id)},
+                data: {
+                    username,
+                    firstName: first_name,
+                    lastName: last_name,
+                },
+            })
+        }
+    }
+}
+
+export async function getUser(telegramID) {
+    let user = await prisma.user.findUnique({
+        where: {telegramID: BigInt(telegramID)},
+    })
+
+    if (!user) {
+        throw 'No user'
+    }
+
+    return user
 }

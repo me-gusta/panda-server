@@ -7,6 +7,7 @@ import {getOperation} from './operations.js'
 import {nanoid} from 'nanoid'
 import actionRouter from './modules/actionRouter.js'
 import {ALLOWED_EXTENSIONS} from './modules/constants.js'
+import {ensureUserExists} from './utils/db.js'
 
 const {TG_BOT_TOKEN} = process.env
 
@@ -28,53 +29,36 @@ bot.api.config.use(hydrateFiles(bot.token, {
     environment: 'test',
 }))
 
-// bot.use(async (grammyContext, next) => {
-//     if (!(grammyContext.from && grammyContext.from.id)) return
-//
-//     grammyContext.ctx = await getContext(grammyContext)
-//
-//     console.log('== Start operations ==', Date.now())
-//     console.log(JSON.stringify(grammyContext.ctx, null, 2))
-//     console.log('==  ==', Date.now())
-//
-//     await next()
-//
-//     await saveContext(grammyContext.ctx)
-//     console.log('== End operations ==', Date.now())
-//     console.log(JSON.stringify(grammyContext.ctx, null, 2))
-//     console.log('==  ==', Date.now())
-// })
+bot.use(async (ctx, next) => {
+    if (!(ctx.from && ctx.from.id)) return
+    await ensureUserExists(ctx)
+
+    await next()
+})
 
 bot.command('reset', async (grammyContext) => {
-    const {ctx} = grammyContext
-    ctx.programs = [
-        {
-            id: nanoid(),
-            operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
-            current: 0,
-            ctx: {},
-        },
-    ]
 })
 
 bot.command('konspekt', async (grammyContext) => {
-    const {ctx} = grammyContext
-    const program = {
-        operationLabelList: ['input.text', 'requestAI', 'output.text'],
-        current: 0,
-        ctx: {aiTool: 'konspekt'},
-    }
-    ctx.programs.push(program)
-
-    const operation = getOperation(program.operationLabelList[0])
-    await operation.init(ctx)
+    // const {ctx} = grammyContext
+    // const program = {
+    //     operationLabelList: ['input.text', 'requestAI', 'output.text'],
+    //     current: 0,
+    //     ctx: {aiTool: 'konspekt'},
+    // }
+    // ctx.programs.push(program)
+    //
+    // const operation = getOperation(program.operationLabelList[0])
+    // await operation.init(ctx)
 })
 
 bot.on('message:text', async (ctx) => {
     await actionRouter({
         action: 'tgText',
         telegramID: ctx.from.id,
-        text: ctx.message.text,
+        data: {
+            text: ctx.message.text
+        }
     })
 })
 
@@ -91,8 +75,10 @@ bot.on('message:photo', async (ctx) => {
     await actionRouter({
         action: 'tgFile',
         telegramID: ctx.from.id,
-        cdnURL,
-        extension: 'jpg',
+        data: {
+            cdnURL,
+            extension: 'jpg',
+        }
     })
 })
 
@@ -119,8 +105,10 @@ bot.on('message:document', async (ctx) => {
     await actionRouter({
         action: 'tgFile',
         telegramID: ctx.from.id,
-        cdnURL,
-        extension: extension
+        data: {
+            cdnURL,
+            extension,
+        },
     })
 })
 
@@ -130,7 +118,9 @@ bot.on("callback_query:data", async (ctx) => {
     await actionRouter({
         action: 'tgInlineButton',
         telegramID: ctx.from.id,
-        data: ctx.callbackQuery.data,
+        data: {
+            data: ctx.callbackQuery.data,
+        },
     })
 })
 
