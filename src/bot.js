@@ -3,38 +3,20 @@ import {Bot} from 'grammy'
 import {hydrateFiles} from '@grammyjs/files'
 import path from 'path'
 import {generateUniqueFileName, uploadToS3} from './utils/s3.js'
-import actions from './utils/actions.js'
-import {getContext, saveContext, setContext} from './utils/db.js'
 import {getOperation} from './operations.js'
 import {nanoid} from 'nanoid'
+import actionRouter from './modules/actionRouter.js'
+import {ALLOWED_EXTENSIONS} from './modules/constants.js'
 
 const {TG_BOT_TOKEN} = process.env
-const MAX_FILE_SIZE = 5 * 1024 * 1024
-const IMAGE_EXTENSIONS = [
-    'jpg',
-    'jpeg',
-    'png',
-    'gif',
-    'tif',
-    'tiff',
-    'bmp',
-    'svg',
-]
-const ALLOWED_EXTENSIONS = [
-    'doc',
-    'docx',
-    'pdf',
-    'txt',
-    'rtf',
-    'odt',
-    'pages',
-    ...IMAGE_EXTENSIONS,
-    'xls',
-    'xlsx',
-    'ods',
-    'csv',
-    'md',
-]
+
+
+/*
+
+
+
+
+*/
 
 export const bot = new Bot(TG_BOT_TOKEN, {
     client: {
@@ -46,22 +28,22 @@ bot.api.config.use(hydrateFiles(bot.token, {
     environment: 'test',
 }))
 
-bot.use(async (grammyContext, next) => {
-    if (!(grammyContext.from && grammyContext.from.id)) return
-
-    grammyContext.ctx = await getContext(grammyContext)
-
-    console.log('== Start operations ==', Date.now())
-    console.log(JSON.stringify(grammyContext.ctx, null, 2))
-    console.log('==  ==', Date.now())
-
-    await next()
-
-    await saveContext(grammyContext.ctx)
-    console.log('== End operations ==', Date.now())
-    console.log(JSON.stringify(grammyContext.ctx, null, 2))
-    console.log('==  ==', Date.now())
-})
+// bot.use(async (grammyContext, next) => {
+//     if (!(grammyContext.from && grammyContext.from.id)) return
+//
+//     grammyContext.ctx = await getContext(grammyContext)
+//
+//     console.log('== Start operations ==', Date.now())
+//     console.log(JSON.stringify(grammyContext.ctx, null, 2))
+//     console.log('==  ==', Date.now())
+//
+//     await next()
+//
+//     await saveContext(grammyContext.ctx)
+//     console.log('== End operations ==', Date.now())
+//     console.log(JSON.stringify(grammyContext.ctx, null, 2))
+//     console.log('==  ==', Date.now())
+// })
 
 bot.command('reset', async (grammyContext) => {
     const {ctx} = grammyContext
@@ -89,7 +71,9 @@ bot.command('konspekt', async (grammyContext) => {
 })
 
 bot.on('message:text', async (ctx) => {
-    await actions.text(ctx.ctx, {
+    await actionRouter({
+        action: 'tgText',
+        telegramID: ctx.from.id,
         text: ctx.message.text,
     })
 })
@@ -104,14 +88,13 @@ bot.on('message:photo', async (ctx) => {
     const fp = await file.download(`./data/tmp/${generateUniqueFileName('jpg')}`)
     const cdnURL = await uploadToS3(fp)
 
-    await actions.file({
-        ...ctx.ctx,
+    await actionRouter({
+        action: 'tgFile',
+        telegramID: ctx.from.id,
         cdnURL,
         extension: 'jpg',
-        setContext: upd => setContext(ctx.ctx, upd),
     })
 })
-
 
 bot.on('message:document', async (ctx) => {
     const document = ctx.message.document
@@ -124,7 +107,7 @@ bot.on('message:document', async (ctx) => {
     }
 
     const fileName = document.file_name || 'file'
-    const extension = path.extname(fileName)
+    const extension = path.extname(fileName).replace('.', '')
     if (!ALLOWED_EXTENSIONS.has(extension)) {
         await ctx.reply('Я не знаю такой формат файла!')
         return
@@ -133,17 +116,20 @@ bot.on('message:document', async (ctx) => {
     const fp = await file.download(`./data/tmp/${generateUniqueFileName('jpg')}`)
     const cdnURL = await uploadToS3(fp)
 
-    await actions.file({
-        ...ctx.ctx,
+    await actionRouter({
+        action: 'tgFile',
+        telegramID: ctx.from.id,
         cdnURL,
-        extension: extension.replace('.', ''),
-        setContext: upd => setContext(ctx.ctx, upd),
+        extension: extension
     })
 })
 
 bot.on("callback_query:data", async (ctx) => {
     await ctx.answerCallbackQuery()
-    await actions.inlineButton({
+
+    await actionRouter({
+        action: 'tgInlineButton',
+        telegramID: ctx.from.id,
         data: ctx.callbackQuery.data,
     })
 })

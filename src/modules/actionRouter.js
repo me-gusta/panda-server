@@ -65,31 +65,49 @@ const operate = async ctx => {
         programs: {$push: programsToAdd},
     })
 }
+/*
 
-export default {
-    text: async (ctx, more) => {
-        // {text} = ctx
-        await operate({
-                ...ctx,
-                setContext: upd => setContext(ctx, upd),
-                ...more,
-            },
-        )
-    },
-    aiResponse: async (ctx, more) => {
-        // {cdnURL, extension} = ctx
-        await operate({
-            ...ctx,
-            setContext: upd => setContext(ctx, upd),
-            ...more,
-        })
-    },
-    file: async (ctx) => {
-        // {cdnURL, extension} = ctx
-        await operate(ctx)
-    },
-    inlineButton: async (ctx) => {
-        // {data} = ctx
-        await operate(ctx)
-    },
+telegramID =>
+
+User
+ctx
+    telegramID
+    username
+*programs
+
+Program
+ctx
+    ...
+pointer
+*operationLabelList
+
+------------------
+
+inputType = 'tgText' | 'tgPhoto' | 'tgFile' | 'aiResponse'
+data = ...
+
+for program of User.iter_programs()
+    operation = program.current()
+    if (operation.inputs.inputType) {
+        const halt = operation.input.inputType(data)
+        if (halt) return
+    }
+
+compare User.programs vs User.programsAsInputed: remove or update (ctx, pointer)
+update User.ctx
+
+------------------
+
+operation._next() -> this.program.current += 1
+operation._end() -> this.user.removeProgram(this.program.id)
+operation.extendCtxProgram({...})
+operation.extendCtxUser({...})
+operation.getCtxProgram('name')
+operation.getCtxUser('name.with.dots')
+
+
+ */
+
+export default async (actionData) => {
+
 }
