@@ -62,6 +62,11 @@ bot.command('programs', async (ctx) => {
     ctx.reply(out)
 })
 
+bot.command('me', async (ctx) => {
+
+    ctx.reply(`/start\n/reset\n/onboard\n/programs`)
+})
+
 bot.command('onboard', async (ctx) => {
     const telegramID = ctx.from.id
 
@@ -70,7 +75,7 @@ bot.command('onboard', async (ctx) => {
 
     await user.addProgram({
         context: {},
-        operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2'],
+        operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
         pointer: 0,
     })
 

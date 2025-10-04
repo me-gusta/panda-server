@@ -21,8 +21,12 @@ export async function ensureUserExists(ctx) {
                 context: {},
             },
         })
+        await addProgram(user.id, {
+            context: {},
+            operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
+            pointer: 0,
+        })
     } else {
-        // Update user details if changed
         if (
             user.username !== username ||
             user.firstName !== first_name ||
@@ -54,7 +58,7 @@ export async function getUser(telegramID) {
 }
 
 
-export async function addProgram(userId, {context, operationLabelList, pointer}) {
+export async function addProgram(userId, {context={}, operationLabelList, pointer=0}) {
     return prisma.program.create({
         data: {
             context,

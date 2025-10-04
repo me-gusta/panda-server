@@ -7,14 +7,14 @@ import deepGetFromObject from '../utils/deepGetFromObject.js'
 const operationMap = {
     menuSender: {
         triggers: {
-            tgText: async (ctx) => {
-                const {text} = ctx
+            tgText: async (op, data) => {
+                const {text} = data
 
                 if (text === '/start') {
                     const keyboard = new InlineKeyboard()
                         .webApp("Выбрать программу", "http://127.0.0.1:3010")
 
-                    await bot.api.sendMessage(ctx.telegramID, 'Привет! Это главное меню', {
+                    await bot.api.sendMessage(op.telegramID, 'Привет! Это главное меню', {
                         reply_markup: keyboard,
                     })
                 }
@@ -165,15 +165,12 @@ const operationMap = {
         },
     },
     setBasic: {
-        init: async (ctx) => {
-            const {next} = ctx
-            await bot.api.sendMessage(ctx.telegramID, 'Спасибо за ответы!')
-            ctx.addProgram({
-                id: 'menuSender',
+        init: async (op) => {
+            await bot.api.sendMessage(op.telegramID, 'Спасибо за ответы!')
+            op.user.addProgram({
                 operationLabelList: ['menuSender'],
-                current: 0,
             })
-            await next()
+            await op.next()
         },
     },
 }
