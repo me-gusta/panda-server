@@ -5,6 +5,8 @@ import path from 'path'
 import {generateUniqueFileName, uploadToS3} from './utils/s3.js'
 import actions from './utils/actions.js'
 import {getContext, saveContext, setContext} from './utils/db.js'
+import {getOperation} from './operations.js'
+import {nanoid} from 'nanoid'
 
 const {TG_BOT_TOKEN} = process.env
 const MAX_FILE_SIZE = 5 * 1024 * 1024
@@ -55,32 +57,39 @@ bot.use(async (grammyContext, next) => {
 
     await next()
 
-    await saveContext(grammyContext, grammyContext.ctx)
+    await saveContext(grammyContext.ctx)
     console.log('== End operations ==', Date.now())
     console.log(JSON.stringify(grammyContext.ctx, null, 2))
     console.log('==  ==', Date.now())
 })
 
+bot.command('reset', async (grammyContext) => {
+    const {ctx} = grammyContext
+    ctx.programs = [
+        {
+            id: nanoid(),
+            operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
+            current: 0,
+            ctx: {},
+        },
+    ]
+})
+
 bot.command('konspekt', async (grammyContext) => {
     const {ctx} = grammyContext
-    // setGlobalContext(ctx, {
-    //     programs: {
-    //         $push: [
-    //             {
-    //                 operationLabelList: ['input.text', 'requestAI', 'output.text'],
-    //                 current: 0,
-    //                 ctx: {aiTool: 'konspekt'},
-    //             },
-    //         ],
-    //     },
-    // })
+    const program = {
+        operationLabelList: ['input.text', 'requestAI', 'output.text'],
+        current: 0,
+        ctx: {aiTool: 'konspekt'},
+    }
+    ctx.programs.push(program)
 
+    const operation = getOperation(program.operationLabelList[0])
+    await operation.init(ctx)
 })
 
 bot.on('message:text', async (ctx) => {
-    await actions.text({
-        ...ctx.ctx,
-        setContext: upd => setContext(ctx.ctx, upd),
+    await actions.text(ctx.ctx, {
         text: ctx.message.text,
     })
 })

@@ -42,11 +42,10 @@ export async function getContext(grammyContext) {
 }
 
 
-export async function saveContext(grammyContext, ctx) {
-    const telegramID = grammyContext.from.id
+export async function saveContext(ctx) {
 
     await prisma.user.update({
-        where: {telegramID: BigInt(telegramID)},
+        where: {telegramID: BigInt(ctx.telegramID)},
         data: {
             context: ctx
         }
@@ -95,7 +94,6 @@ export async function getOrCreateUser(ctx) {
 }
 
 export function setContext(obj, extension) {
-    console.log('setContext')
     for (const key in extension) {
         if (Object.prototype.hasOwnProperty.call(extension, key)) {
             const extensionValue = extension[key]
@@ -129,5 +127,4 @@ export function setContext(obj, extension) {
             }
         }
     }
-    console.log(obj)
 }
