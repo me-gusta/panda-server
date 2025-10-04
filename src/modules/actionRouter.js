@@ -1,5 +1,4 @@
 import {getOperation} from '../operations.js'
-import {getContext, setContext} from './db.js'
 import {getUser, saveUser} from '../utils/db.js'
 import User from './User.js'
 
@@ -116,8 +115,14 @@ export default async (actionData) => {
     const userFromDB = await getUser(telegramID)
     const user = new User(userFromDB)
 
+    console.log('action', action)
+    console.log('data', data)
+    console.log('user', user.id)
     for (let program of user.programs) {
+        console.log('program', program.id)
         const operation = program.getCurrentOperation()
+        console.log('operation')
+        console.log(operation.triggers)
         await operation.runTrigger(action, data)
     }
 

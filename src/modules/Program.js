@@ -9,6 +9,7 @@ export default class Program {
     pointerMax = 0
     context = {}
     removed = false
+    telegramID = 0
     constructor(user, programData) {
         this.user = user
 
@@ -16,6 +17,8 @@ export default class Program {
         this.id = id
         this.context = context
         this.pointerMax = operationLabelList.length - 1
+
+        this.telegramID = user.telegramID
 
         this.pointer = pointer
         for (let operationLabel of operationLabelList) {
@@ -36,7 +39,10 @@ export default class Program {
     }
 
     async initiateNextOperation() {
-        if (this.pointer === this.pointerMax) return
+        if (this.pointer === this.pointerMax) {
+            this.user.removeProgram(this.id)
+            return
+        }
         this.pointer += 1
         const o = this.getCurrentOperation()
         await o.runInit()

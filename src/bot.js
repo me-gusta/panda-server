@@ -7,7 +7,8 @@ import {getOperation} from './operations.js'
 import {nanoid} from 'nanoid'
 import actionRouter from './modules/actionRouter.js'
 import {ALLOWED_EXTENSIONS, MAX_FILE_SIZE} from './modules/constants.js'
-import {ensureUserExists} from './utils/db.js'
+import {ensureUserExists, getUser, saveUser} from './utils/db.js'
+import User from './modules/User.js'
 
 const {TG_BOT_TOKEN} = process.env
 
@@ -36,20 +37,44 @@ bot.use(async (ctx, next) => {
     await next()
 })
 
-bot.command('reset', async (grammyContext) => {
+bot.command('reset', async (ctx) => {
+    const telegramID = ctx.from.id
+
+    const userFromDB = await getUser(telegramID)
+    const user = new User(userFromDB)
+
+    user.clearPrograms()
+
+    await saveUser(user)
 })
 
-bot.command('konspekt', async (grammyContext) => {
-    // const {ctx} = grammyContext
-    // const program = {
-    //     operationLabelList: ['input.text', 'requestAI', 'output.text'],
-    //     current: 0,
-    //     ctx: {aiTool: 'konspekt'},
-    // }
-    // ctx.programs.push(program)
-    //
-    // const operation = getOperation(program.operationLabelList[0])
-    // await operation.init(ctx)
+
+bot.command('programs', async (ctx) => {
+    const telegramID = ctx.from.id
+
+    const userFromDB = await getUser(telegramID)
+
+    let out = `list of programs:\n`
+    for (let program of userFromDB.programs) {
+        out += `id: ${program.id}\noperations: ${program.operationLabelList.join('--')}\npointer: ${program.pointer}\n\n`
+    }
+
+    ctx.reply(out)
+})
+
+bot.command('onboard', async (ctx) => {
+    const telegramID = ctx.from.id
+
+    const userFromDB = await getUser(telegramID)
+    const user = new User(userFromDB)
+
+    await user.addProgram({
+        context: {},
+        operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2'],
+        pointer: 0,
+    })
+
+    await saveUser(user)
 })
 
 bot.on('message:text', async (ctx) => {
@@ -57,8 +82,8 @@ bot.on('message:text', async (ctx) => {
         action: 'tgText',
         telegramID: ctx.from.id,
         data: {
-            text: ctx.message.text
-        }
+            text: ctx.message.text,
+        },
     })
 })
 
@@ -78,7 +103,7 @@ bot.on('message:photo', async (ctx) => {
         data: {
             cdnURL,
             extension: 'jpg',
-        }
+        },
     })
 })
 

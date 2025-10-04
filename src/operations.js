@@ -1,7 +1,6 @@
 import {bot} from './bot.js'
 import {InlineKeyboard} from 'grammy'
 import {chatOnce} from './utils/ai.js'
-import {saveContext} from './utils/db.js'
 
 
 const operationTree = {

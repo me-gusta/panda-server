@@ -6,10 +6,12 @@ export default class Operation {
     user // User
     triggers = {}
     init = undefined
+    telegramID = 0
 
     constructor(user, program, operationData) {
         this.user = user
         this.program = program
+        this.telegramID = user.telegramID
         const {triggers, init} = operationData
         if (init) this.init = init
         if (triggers) this.triggers = triggers
@@ -20,7 +22,6 @@ export default class Operation {
     }
 
     end() {
-        this.program.removed = true
         this.user.removeProgram(this.program.id)
     }
 
@@ -45,6 +46,7 @@ export default class Operation {
     getCtxProgram(label) {
         return deepGetFromObject(this.program.context, label)
     }
+
     getCtxUser(label) {
         return deepGetFromObject(this.user.context, label)
     }

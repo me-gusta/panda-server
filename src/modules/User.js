@@ -6,11 +6,13 @@ export default class User {
     context = {}
     programs = []
     removedPrograms = []
+    telegramID
 
     constructor(userFromDB) {
-        const {id, programs, context} = userFromDB
+        const {id, programs, context, telegramID} = userFromDB
         this.id = id
         this.context = context
+        this.telegramID = parseInt(telegramID)
         for (let p of programs) {
             const program = new Program(this, p)
             this.programs.push(program)
@@ -26,7 +28,7 @@ export default class User {
     }
 
     async addProgram(programSchema) {
-        const p = await addProgram(programSchema)
+        const p = await addProgram(this.id, programSchema)
 
         const program = new Program(this, p)
 
@@ -35,5 +37,9 @@ export default class User {
 
     removeProgram(programID) {
         this.removedPrograms.push(programID)
+        const program = this.programs.find(el => el.id === programID)
+        if (program) {
+            program.removed = true
+        }
     }
 }

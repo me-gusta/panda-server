@@ -7,7 +7,7 @@ import deepGetFromObject from '../utils/deepGetFromObject.js'
 const operationMap = {
     menuSender: {
         triggers: {
-            text: async (ctx) => {
+            tgText: async (ctx) => {
                 const {text} = ctx
 
                 if (text === '/start') {
@@ -22,12 +22,12 @@ const operationMap = {
         },
     },
     input: {
-        text: {
+        tgText: {
             init: async (ctx) => {
                 await bot.api.sendMessage(ctx.telegramID, 'Привет! Введи данные сообщением')
             },
             triggers: {
-                text: async (ctx) => {
+                tgText: async (ctx) => {
                     const {next, text, program, end} = ctx
                     if (text === '/start') {
                         await end()
@@ -70,7 +70,7 @@ const operationMap = {
                 await bot.api.sendMessage(ctx.telegramID, 'Привет! Отправь файлы')
             },
             triggers: {
-                text: async (ctx) => {
+                tgText: async (ctx) => {
                     const {program, cdnUrl, extension} = ctx
                     if (!['docx', 'doc', 'pdf', 'xls'].includes(extension)) {
                         return
@@ -89,7 +89,7 @@ const operationMap = {
         },
     },
     output: {
-        text: {
+        tgText: {
             init: async (ctx) => {
 
                 await bot.api.sendMessage(ctx.telegramID, 'Не могу сделать запрос')
@@ -128,36 +128,38 @@ const operationMap = {
     },
     onboarding: {
         before: {
+            init: async (op) => {
+                await bot.api.sendMessage(op.telegramID, 'Onboarding set')
+            },
             triggers: {
-                text: async (ctx) => {
-                    const {next} = ctx
-                    if (ctx.text === '/start') {
-                        await next()
+                tgText: async (op, data) => {
+                    if (data.text === '/start') {
+                        await op.next()
                     }
                 },
             },
         },
         q1: {
-            init: async (ctx) => {
-                await bot.api.sendMessage(ctx.telegramID, 'Привет пользователь! Кто ты?')
+            init: async (op) => {
+                await bot.api.sendMessage(op.telegramID, 'Привет пользователь! Кто ты?')
             },
             triggers: {
-                text: async (ctx) => {
-                    const {text, next} = ctx
-                    ctx.setContext({onboarding: {q1: text}})
-                    await next()
+                tgText: async (op, data) => {
+                    const {text} = data
+                    op.extendCtxUser({onboarding: {q1: text}})
+                    await op.next()
                 },
             },
         },
         q2: {
-            init: async (ctx) => {
-                await bot.api.sendMessage(ctx.telegramID, 'Привет пользователь! Что хочешь?')
+            init: async (op) => {
+                await bot.api.sendMessage(op.telegramID, 'Привет пользователь! Что хочешь?')
             },
             triggers: {
-                text: async (ctx) => {
-                    const {text, next} = ctx
-                    ctx.setContext({onboarding: {q2: text}})
-                    await next()
+                tgText: async (op, data) => {
+                    const {text} = data
+                    op.extendCtxUser({onboarding: {q2: text}})
+                    await op.next()
                 },
             },
         },

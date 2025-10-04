@@ -4,9 +4,6 @@ import {nanoid} from 'nanoid'
 const prisma = new PrismaClient()
 
 
-
-
-
 export async function ensureUserExists(ctx) {
     const {id, username, first_name, last_name} = ctx.from
 
@@ -21,7 +18,7 @@ export async function ensureUserExists(ctx) {
                 username,
                 firstName: first_name,
                 lastName: last_name,
-                programs: []
+                context: {},
             },
         })
     } else {
@@ -46,6 +43,7 @@ export async function ensureUserExists(ctx) {
 export async function getUser(telegramID) {
     let user = await prisma.user.findUnique({
         where: {telegramID: BigInt(telegramID)},
+        include: {programs: true},
     })
 
     if (!user) {
@@ -56,14 +54,14 @@ export async function getUser(telegramID) {
 }
 
 
-export async function addProgram({ context, operationLabelList, pointer, userId }) {
+export async function addProgram(userId, {context, operationLabelList, pointer}) {
     return prisma.program.create({
         data: {
             context,
             operationLabelList,
             pointer,
-            User: { connect: { id: userId } }
-        }
+            User: {connect: {id: userId}},
+        },
     })
 }
 
@@ -74,26 +72,26 @@ export async function saveUser(user) {
     const removedSet = new Set(removedPrograms)
 
     const userPromise = prisma.user.update({
-        where: { id },
+        where: {id},
         data: {
             context,
             programs: {
-                disconnect: removedPrograms.map(pid => ({ id: pid }))
-            }
-        }
+                disconnect: removedPrograms.map(pid => ({id: pid})),
+            },
+        },
     })
 
     const programPromises = programs
         .filter(p => !removedSet.has(p.id))
         .map(p =>
             prisma.program.update({
-                where: { id: p.id },
-                data: { context: p.context }
-            })
+                where: {id: p.id},
+                data: {context: p.context, pointer: p.pointer},
+            }),
         )
 
     const [userResult, programResults] = await Promise.all([
         userPromise,
-        Promise.all(programPromises)
+        Promise.all(programPromises),
     ])
 }

@@ -7,7 +7,8 @@
     "start": "node  src/startExpressApp.js",
     "tailwind": "npx @tailwindcss/cli -i ./public/assets/tailwind/input.css -o ./public/assets/tailwind/output.css --watch",
     "bot": "nodemon ./src/startBot.js",
-    "initdb": "prisma migrate dev --name init && prisma generate"
+    "initdb": "prisma migrate dev --name init && prisma generate",
+    "prisma-studio": "prisma studio"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.899.0",
