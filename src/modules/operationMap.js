@@ -1,6 +1,7 @@
 import {bot} from '../bot.js'
 import {InlineKeyboard} from 'grammy'
 import {chatOnce} from '../utils/ai.js'
+import deepGetFromObject from '../utils/deepGetFromObject.js'
 
 
 const operationMap = {
@@ -176,12 +177,6 @@ const operationMap = {
 }
 
 export const getOperation = (operationLabel) => {
-    const keys = operationLabel.split('.')
-
-    let result = keys.reduce((acc, key) => {
-        return (acc && acc[key] !== 'undefined') ? acc[key] : undefined
-    }, operationTree)
-
-    return result
+    return deepGetFromObject(operationMap, operationLabel)
 }
 

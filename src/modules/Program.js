@@ -1,16 +1,44 @@
-export default class Program {
-    user
-    currentOperation = 0
-    operations = []
-    constructor(programData) {
-        const {operations, currentOperation, context} = programData
-        this.context = context
+import Operation from './Operation.js'
+import {getOperation} from './operationMap.js'
 
-        this.currentOperation = currentOperation
-        this.operations = operations
+export default class Program {
+    id
+    user
+    operations = []
+    pointer = 0
+    pointerMax = 0
+    context = {}
+    removed = false
+    constructor(user, programData) {
+        this.user = user
+
+        const {id, operationLabelList, pointer, context} = programData
+        this.id = id
+        this.context = context
+        this.pointerMax = operationLabelList.length - 1
+
+        this.pointer = pointer
+        for (let operationLabel of operationLabelList) {
+            const o = getOperation(operationLabel)
+            this.operations.push(
+                new Operation(user, this, o)
+            )
+        }
     }
 
-    setUser(user) {
-        this.user = user
+    getCurrentOperation() {
+        return this.operations[this.pointer]
+    }
+
+    async initiateCurrentOperation() {
+        const o = this.getCurrentOperation()
+        await o.runInit()
+    }
+
+    async initiateNextOperation() {
+        if (this.pointer === this.pointerMax) return
+        this.pointer += 1
+        const o = this.getCurrentOperation()
+        await o.runInit()
     }
 }

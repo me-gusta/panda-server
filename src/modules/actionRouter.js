@@ -1,6 +1,6 @@
 import {getOperation} from '../operations.js'
 import {getContext, setContext} from './db.js'
-import {getUser} from '../utils/db.js'
+import {getUser, saveUser} from '../utils/db.js'
 import User from './User.js'
 
 const makeNext = (ctx, program, end) => async () => {
@@ -113,6 +113,13 @@ operation.getCtxUser('name.with.dots')
 export default async (actionData) => {
     const {action, telegramID, data} = actionData
 
-    const userFromDB = await getUser()
+    const userFromDB = await getUser(telegramID)
     const user = new User(userFromDB)
+
+    for (let program of user.programs) {
+        const operation = program.getCurrentOperation()
+        await operation.runTrigger(action, data)
+    }
+
+    await saveUser(user)
 }

@@ -9,15 +9,18 @@ datasource db {
 }
 
 model User {
-  id         Int      @id @default(autoincrement())
-  telegramID BigInt   @unique
-  createdAt  DateTime @default(now())
+  id         Int       @id @default(autoincrement())
+  telegramID BigInt    @unique
+  createdAt  DateTime  @default(now())
   context    Json
+  programs   Program[]
 }
 
 model Program {
-  id                 Int  @id @default(autoincrement())
+  id                 Int   @id @default(autoincrement())
   context            Json
   operationLabelList Json
-  current            Int
+  pointer            Int
+  User               User? @relation(fields: [userId], references: [id])
+  userId             Int?
 }

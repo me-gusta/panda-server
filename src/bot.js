@@ -6,7 +6,7 @@ import {generateUniqueFileName, uploadToS3} from './utils/s3.js'
 import {getOperation} from './operations.js'
 import {nanoid} from 'nanoid'
 import actionRouter from './modules/actionRouter.js'
-import {ALLOWED_EXTENSIONS} from './modules/constants.js'
+import {ALLOWED_EXTENSIONS, MAX_FILE_SIZE} from './modules/constants.js'
 import {ensureUserExists} from './utils/db.js'
 
 const {TG_BOT_TOKEN} = process.env

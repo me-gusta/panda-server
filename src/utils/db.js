@@ -3,90 +3,8 @@ import {nanoid} from 'nanoid'
 
 const prisma = new PrismaClient()
 
-export async function getContext(grammyContext) {
-    const telegramID = grammyContext.from.id
-    const username = grammyContext.from.username
-    const fullName = grammyContext.from.first_name
-    const lastName = grammyContext.from.last_name
-
-    let user = await prisma.user.findUnique({
-        where: {telegramID: BigInt(telegramID)},
-    })
-
-    if (!user) {
-        user = await prisma.user.create({
-            data: {
-                telegramID: BigInt(telegramID),
-                context: {
-                    telegramID: grammyContext.from.id,
-                    user: {username, fullName, lastName},
-                    programs: [
-                        {
-                            id: nanoid(),
-                            operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
-                            current: 0,
-                            ctx: {},
-                        },
-                    ],
-                },
-            },
-        })
-    }
-
-    user.context.user.username = username
-    user.context.user.fullName = fullName
-    user.context.user.lastName = lastName
-
-    return user.context
-
-}
 
 
-export async function saveContext(ctx) {
-
-    await prisma.user.update({
-        where: {telegramID: BigInt(ctx.telegramID)},
-        data: {
-            context: ctx
-        }
-    })
-}
-
-export function setContext(obj, extension) {
-    for (const key in extension) {
-        if (Object.prototype.hasOwnProperty.call(extension, key)) {
-            const extensionValue = extension[key]
-            const originalValue = obj[key]
-
-            // Check if extensionValue is a plain object and not an array or null
-            if (typeof extensionValue === 'object' && extensionValue !== null && !Array.isArray(extensionValue)) {
-                // Handle special commands: $push, $add, $sub
-                if (Object.prototype.hasOwnProperty.call(extensionValue, '$push')) {
-                    if (Array.isArray(originalValue)) {
-                        originalValue.push(...extensionValue.$push)
-                    }
-                } else if (Object.prototype.hasOwnProperty.call(extensionValue, '$add')) {
-                    if (typeof originalValue === 'number') {
-                        obj[key] += extensionValue.$add
-                    }
-                } else if (Object.prototype.hasOwnProperty.call(extensionValue, '$sub')) {
-                    if (typeof originalValue === 'number') {
-                        obj[key] -= extensionValue.$sub
-                    }
-                    // If it's a regular object for deep merging
-                } else if (typeof originalValue === 'object' && originalValue !== null && !Array.isArray(originalValue)) {
-                    setContext(originalValue, extensionValue)
-                } else {
-                    // If the key doesn't exist in obj or is not an object, assign it
-                    obj[key] = extensionValue
-                }
-            } else {
-                // For non-object values, just assign
-                obj[key] = extensionValue
-            }
-        }
-    }
-}
 
 
 export async function ensureUserExists(ctx) {
@@ -135,4 +53,47 @@ export async function getUser(telegramID) {
     }
 
     return user
+}
+
+
+export async function addProgram({ context, operationLabelList, pointer, userId }) {
+    return prisma.program.create({
+        data: {
+            context,
+            operationLabelList,
+            pointer,
+            User: { connect: { id: userId } }
+        }
+    })
+}
+
+
+export async function saveUser(user) {
+    const {id, programs, removedPrograms, context} = user
+
+    const removedSet = new Set(removedPrograms)
+
+    const userPromise = prisma.user.update({
+        where: { id },
+        data: {
+            context,
+            programs: {
+                disconnect: removedPrograms.map(pid => ({ id: pid }))
+            }
+        }
+    })
+
+    const programPromises = programs
+        .filter(p => !removedSet.has(p.id))
+        .map(p =>
+            prisma.program.update({
+                where: { id: p.id },
+                data: { context: p.context }
+            })
+        )
+
+    const [userResult, programResults] = await Promise.all([
+        userPromise,
+        Promise.all(programPromises)
+    ])
 }
