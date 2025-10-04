@@ -114,17 +114,20 @@ export default async (actionData) => {
 
     const userFromDB = await getUser(telegramID)
     const user = new User(userFromDB)
-
+    console.log('------ vvvvvv ------')
     console.log('action', action)
     console.log('data', data)
     console.log('user', user.id)
-    for (let program of user.programs) {
+    const programs = user.programs.toReversed()
+    for (let program of programs) {
         console.log('program', program.id)
         const operation = program.getCurrentOperation()
         console.log('operation')
         console.log(operation.triggers)
-        await operation.runTrigger(action, data)
+        const shouldHalt = await operation.runTrigger(action, data)
+        if (shouldHalt) break
     }
 
+    console.log('------ ///// ------')
     await saveUser(user)
 }

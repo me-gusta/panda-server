@@ -31,6 +31,7 @@ export default class User {
         const p = await addProgram(this.id, programSchema)
 
         const program = new Program(this, p)
+        this.programs.push(program)
 
         await program.initiateCurrentOperation()
     }

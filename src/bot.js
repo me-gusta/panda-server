@@ -64,7 +64,7 @@ bot.command('programs', async (ctx) => {
 
 bot.command('me', async (ctx) => {
 
-    ctx.reply(`/start\n/reset\n/onboard\n/programs`)
+    ctx.reply(`/start\n/reset\n/onboard\n/setmenu\n/programs`)
 })
 
 bot.command('onboard', async (ctx) => {
@@ -74,9 +74,21 @@ bot.command('onboard', async (ctx) => {
     const user = new User(userFromDB)
 
     await user.addProgram({
-        context: {},
         operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
-        pointer: 0,
+    })
+
+    await saveUser(user)
+})
+
+
+bot.command('setmenu', async (ctx) => {
+    const telegramID = ctx.from.id
+
+    const userFromDB = await getUser(telegramID)
+    const user = new User(userFromDB)
+
+    await user.addProgram({
+        operationLabelList: ['menuSender'],
     })
 
     await saveUser(user)

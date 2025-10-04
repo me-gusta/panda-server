@@ -32,7 +32,7 @@ export default class Operation {
 
     async runTrigger(triggerLabel, data) {
         if (this.program.removed) return
-        if (this.triggers[triggerLabel]) await this.triggers[triggerLabel](this, data)
+        if (this.triggers[triggerLabel]) return await this.triggers[triggerLabel](this, data)
     }
 
     extendCtxProgram(update) {

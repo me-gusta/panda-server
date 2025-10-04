@@ -1,3 +1,28 @@
+const tg = window.Telegram && window.Telegram.WebApp
+
+// Prefer the raw init data provided by Telegram
+const initDataRaw = tg?.initData || (function () {
+    // Fallback: read from URL hash if needed
+    // Telegram injects launch params in window.location.hash as a querystring
+    const hash = window.location.hash.slice(1) // e.g. "tgWebAppData=...&tgWebAppVersion=..."
+    const params = new URLSearchParams(hash)
+    // tgWebAppData is the raw init data query string
+    return params.get('tgWebAppData') || ''
+})()
+
+async function callBackend(path, body) {
+    const res = await fetch(path, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `tma ${initDataRaw}`,
+        },
+        body: JSON.stringify(body),
+        credentials: 'omit',
+    })
+    if (!res.ok) throw new Error('Request failed')
+    return await res.json()
+}
 
 const inputTypeGroup = `
 <div class="flex flex-col justify-center">
@@ -10,7 +35,7 @@ const inputTypeGroup = `
             <span class="nb-card-content">
                 <span class="nb-card-title">
                     <span class="nb-label">
-                        <input name="inputType" type="radio" class="nb-checkbox default" checked>
+                        <input value="file" name="inputType" type="radio" class="nb-checkbox default" checked>
                         Файл
                     </span>
                 </span>
@@ -22,7 +47,7 @@ const inputTypeGroup = `
             <span class="nb-card-content">
                 <span class="nb-card-title">
                     <span class="nb-label">
-                        <input name="inputType" type="radio" class="nb-checkbox default">
+                        <input value="photo" name="inputType" type="radio" class="nb-checkbox default">
                         Фотки
                     </span>
                 </span>
@@ -34,7 +59,7 @@ const inputTypeGroup = `
             <span class="nb-card-content">
                 <span class="nb-card-title">
                     <span class="nb-label">
-                        <input name="inputType" type="radio" class="nb-checkbox default">
+                        <input value="text" name="inputType" type="radio" class="nb-checkbox default">
                         Напечатаю сам(а)
                     </span>
                 </span>
@@ -56,7 +81,7 @@ const outputTypeGroup = `
         <span class="nb-card-content">
             <span class="nb-card-title">
                 <span class="nb-label">
-                    <input name="outputType" type="radio" class="nb-checkbox default" checked>
+                    <input value="text" name="outputType" type="radio" class="nb-checkbox default" checked>
                     Просто текст
                 </span>
             </span>
@@ -68,7 +93,7 @@ const outputTypeGroup = `
         <span class="nb-card-content">
             <span class="nb-card-title">
                 <span class="nb-label">
-                    <input name="outputType" type="radio" class="nb-checkbox default">
+                    <input value="no-format" name="outputType" type="radio" class="nb-checkbox default">
                     Просто текст, но без форматирования
                 </span>
             </span>
@@ -80,7 +105,7 @@ const outputTypeGroup = `
         <span class="nb-card-content">
             <span class="nb-card-title">
                 <span class="nb-label">
-                    <input name="outputType" type="radio" class="nb-checkbox default">
+                    <input value="docx" name="outputType" type="radio" class="nb-checkbox default">
                     Формат .docx
                 </span>
             </span>
@@ -92,7 +117,7 @@ const outputTypeGroup = `
         <span class="nb-card-content">
             <span class="nb-card-title">
                 <span class="nb-label">
-                    <input name="outputType" type="radio" class="nb-checkbox default">
+                    <input value="pdf" name="outputType" type="radio" class="nb-checkbox default">
                     Формат .pdf
                 </span>
             </span>
@@ -163,8 +188,17 @@ window.addEventListener('load', () => {
                         hasOutput: true,
                     })
                     document.querySelector('#startButton')
-                        .addEventListener('click', () => {
+                        .addEventListener('click', async () => {
                             console.log('start konspekt')
+                            const inputType = document.querySelector('[name="inputType"]:checked').value
+                            const outputType = document.querySelector('[name="outputType"]:checked').value
+
+                            await callBackend('/api/startProgram', {
+                                program: 'konspekt',
+                                inputType,
+                                outputType
+                            })
+                            window.Telegram.WebApp.close()
                         })
                     return
                 }

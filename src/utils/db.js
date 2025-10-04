@@ -1,5 +1,4 @@
 import {PrismaClient} from '../../generated/prisma/index.js'
-import {nanoid} from 'nanoid'
 
 const prisma = new PrismaClient()
 
@@ -58,7 +57,7 @@ export async function getUser(telegramID) {
 }
 
 
-export async function addProgram(userId, {context={}, operationLabelList, pointer=0}) {
+export async function addProgram(userId, {context = {}, operationLabelList, pointer = 0}) {
     return prisma.program.create({
         data: {
             context,
@@ -87,15 +86,17 @@ export async function saveUser(user) {
 
     const programPromises = programs
         .filter(p => !removedSet.has(p.id))
-        .map(p =>
-            prisma.program.update({
-                where: {id: p.id},
-                data: {context: p.context, pointer: p.pointer},
-            }),
+        .map(p => {
+                return prisma.program.update({
+                    where: {id: p.id},
+                    data: {context: p.context, pointer: p.pointer},
+                })
+            },
         )
 
     const [userResult, programResults] = await Promise.all([
         userPromise,
         Promise.all(programPromises),
     ])
+
 }

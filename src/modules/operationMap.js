@@ -2,6 +2,7 @@ import {bot} from '../bot.js'
 import {InlineKeyboard} from 'grammy'
 import {chatOnce} from '../utils/ai.js'
 import deepGetFromObject from '../utils/deepGetFromObject.js'
+import actionRouter from './actionRouter.js'
 
 
 const operationMap = {
@@ -21,21 +22,30 @@ const operationMap = {
             },
         },
     },
+    hello: {
+        konspekt: {
+            init: async (op) => {
+                await bot.api.sendMessage(op.telegramID, 'Привет! Пишем конспект!')
+                await op.next()
+            },
+        },
+    },
     input: {
-        tgText: {
-            init: async (ctx) => {
-                await bot.api.sendMessage(ctx.telegramID, 'Привет! Введи данные сообщением')
+        text: {
+            init: async (op) => {
+                await bot.api.sendMessage(op.telegramID, 'Привет! Введи данные сообщением')
             },
             triggers: {
-                tgText: async (ctx) => {
-                    const {next, text, program, end} = ctx
+                tgText: async (op, data) => {
+                    const {text} = data
                     if (text === '/start') {
-                        await end()
+                        op.end()
                         return
                     }
-
-                    program.ctx.input = [{type: 'text', text}]
-                    await next()
+                    op.extendCtxProgram({
+                        input: {type: 'text', text},
+                    })
+                    await op.next()
                 },
             },
         },
@@ -97,34 +107,54 @@ const operationMap = {
         },
     },
     requestAI: {
-        init: async (ctx) => {
-            const {program, next} = ctx
-            const {input} = program.ctx
+        init: async (op) => {
+            const {input} = op.program.context
 
-            if (!input || input.length === 0) {
-                await bot.api.sendMessage(ctx.telegramID, 'Не могу сделать запрос')
-                return
-            }
 
-            ctx.removeProgram('menuSender')
-            const messages = [...input]
             const req = async () => {
                 try {
-                    await bot.api.sendMessage(ctx.telegramID, 'Отправил запрос к нейронке')
-                    const resp = await chatOnce({model: 'deepseek-v3.1-terminus', messages})
+                    await bot.api.sendMessage(op.telegramID, 'Отправил запрос к нейронке')
+                    const resp = await chatOnce({
+                        model: 'deepseek-v3.1-terminus',
+                        messages: [
+                            {role: 'user', content: 'Give me a 2-sentence summary of HTTP/2 vs HTTP/1.1.' }
+                        ]
+                    })
                     console.log('got response')
                     console.log(resp)
 
-                    await bot.api.sendMessage(ctx.telegramID, resp)
-                    await next()
+                    await actionRouter({
+                        action: 'aiResponse',
+                        telegramID: op.telegramID,
+                        data: {data: resp}
+                    })
                 } catch (e) {
-                    await bot.api.sendMessage(ctx.telegramID, 'Ошибка')
-                    await next()
+                    await actionRouter({
+                        action: 'aiResponse',
+                        telegramID: op.telegramID,
+                        data: {error: true}
+                    })
                 }
             }
 
             req()
         },
+        triggers: {
+            tgText: async (op, data) => {
+                console.log('halt')
+                return true
+            },
+            aiResponse: async (op, data) => {
+                if (data.error) {
+                    await bot.api.sendMessage(op.telegramID, 'Ошибка нейросети')
+                    op.end()
+                    return
+                }
+                await bot.api.sendMessage(op.telegramID, 'Получил ответ! Обрабатываю файл...')
+                await bot.api.sendMessage(op.telegramID, data.data)
+                await op.next()
+            }
+        }
     },
     onboarding: {
         before: {
