@@ -59,12 +59,32 @@ bot.command('programs', async (ctx) => {
         out += `id: ${program.id}\noperations: ${program.operationLabelList.join('--')}\npointer: ${program.pointer}\n\n`
     }
 
-    ctx.reply(out)
+    await ctx.reply(out)
 })
 
 bot.command('me', async (ctx) => {
+    await ctx.reply(`ID: ${ctx.from.id}`)
+    await ctx.reply(`/start\n/reset\n/onboard\n/setmenu\n/programs`)
+})
 
-    ctx.reply(`/start\n/reset\n/onboard\n/setmenu\n/programs`)
+bot.command('konspekt', async (ctx) => {
+    const telegramID = 5000394127
+    const program = ''
+    const inputType = ''
+    const outputType = ''
+    const userFromDB = await getUser(telegramID)
+    const user = new User(userFromDB)
+
+
+    const helloProgram = 'hello.' + program
+    const inputProgram = 'input.' + inputType
+    const outputProgram = 'output.' + outputType
+
+    await user.addProgram({
+        operationLabelList: [helloProgram, inputProgram, 'requestAI']
+    })
+
+    await saveUser(user)
 })
 
 bot.command('onboard', async (ctx) => {
@@ -110,6 +130,8 @@ bot.on('message:photo', async (ctx) => {
         await ctx.reply('Я не могу обработать такой огромный файл! Максимальный размер файлов: 5 Мегабайт!')
         return
     }
+    const caption = ctx.message.caption || ''
+
     const file = await ctx.getFile()
     const fp = await file.download(`./data/tmp/${generateUniqueFileName('jpg')}`)
     const cdnURL = await uploadToS3(fp)
@@ -120,6 +142,7 @@ bot.on('message:photo', async (ctx) => {
         data: {
             cdnURL,
             extension: 'jpg',
+            caption
         },
     })
 })
@@ -140,6 +163,7 @@ bot.on('message:document', async (ctx) => {
         await ctx.reply('Я не знаю такой формат файла!')
         return
     }
+    const caption = ctx.message.caption || ''
 
     const fp = await file.download(`./data/tmp/${generateUniqueFileName('jpg')}`)
     const cdnURL = await uploadToS3(fp)
@@ -150,6 +174,7 @@ bot.on('message:document', async (ctx) => {
         data: {
             cdnURL,
             extension,
+            caption,
         },
     })
 })
