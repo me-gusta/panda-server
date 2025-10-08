@@ -2,13 +2,15 @@ import deepUpdateObject from '../utils/deepUpdateObject.js'
 import deepGetFromObject from '../utils/deepGetFromObject.js'
 
 export default class Operation {
+    label = ''
     program // Program
     user // User
     triggers = {}
     init = undefined
     telegramID = 0
 
-    constructor(user, program, operationData) {
+    constructor(user, program, label, operationData) {
+        this.label = label
         this.user = user
         this.program = program
         this.telegramID = user.telegramID

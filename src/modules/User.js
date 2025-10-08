@@ -43,4 +43,15 @@ export default class User {
             program.removed = true
         }
     }
+
+    removeAIChat() {
+        for (let program of this.programs) {
+            for (let operation of program.operations) {
+                if (operation.label === 'aiChat') {
+                    this.removeProgram(program.id)
+                    return
+                }
+            }
+        }
+    }
 }

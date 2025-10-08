@@ -24,7 +24,7 @@ export default class Program {
         for (let operationLabel of operationLabelList) {
             const o = getOperation(operationLabel)
             this.operations.push(
-                new Operation(user, this, o)
+                new Operation(user, this, operationLabel, o)
             )
         }
     }

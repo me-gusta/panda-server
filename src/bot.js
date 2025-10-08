@@ -67,6 +67,22 @@ bot.command('me', async (ctx) => {
     await ctx.reply(`/start\n/reset\n/onboard\n/setmenu\n/programs`)
 })
 
+bot.command('aichat', async (ctx) => {
+    const telegramID = 5000394127
+    const userFromDB = await getUser(telegramID)
+    const user = new User(userFromDB)
+
+    await user.addProgram({
+        operationLabelList: ['aiChat'],
+        context: {
+            messages: [],
+            isRequestSent: false,
+        }
+    })
+
+    await saveUser(user)
+})
+
 bot.command('konspekt', async (ctx) => {
     const telegramID = 5000394127
     const program = ''
@@ -76,12 +92,17 @@ bot.command('konspekt', async (ctx) => {
     const user = new User(userFromDB)
 
 
-    const helloProgram = 'hello.' + program
+    const helloProgram = 'hello'
     const inputProgram = 'input.' + inputType
     const outputProgram = 'output.' + outputType
 
+    await user.removeAIChat()
     await user.addProgram({
-        operationLabelList: [helloProgram, inputProgram, 'requestAI']
+        operationLabelList: [helloProgram, inputProgram, 'requestAI'],
+        context: {
+            aiProgram: 'konspekt',
+            helloText: '',
+        }
     })
 
     await saveUser(user)
@@ -186,7 +207,7 @@ bot.on("callback_query:data", async (ctx) => {
         action: 'tgInlineButton',
         telegramID: ctx.from.id,
         data: {
-            data: ctx.callbackQuery.data,
+            callbackData: ctx.callbackQuery.data,
         },
     })
 })
