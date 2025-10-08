@@ -1,11 +1,13 @@
 import {getUser, saveUser} from '../utils/db.js'
 import User from './User.js'
+import logUserAction from '../utils/logUserAction.js'
 
 
 export default async (actionData) => {
     const {action, telegramID, data} = actionData
 
     const userFromDB = await getUser(telegramID)
+    await logUserAction(userFromDB, actionData)
     const user = new User(userFromDB)
     console.log('------ vvvvvv ------')
     console.log('action', action)
