@@ -6,7 +6,7 @@
     "dev": "nodemon src/startExpressApp.js",
     "start": "node  src/startExpressApp.js",
     "tailwind": "npx @tailwindcss/cli -i ./public/assets/tailwind/input.css -o ./public/assets/tailwind/output.css --watch",
-    "bot": "nodemon ./src/startBot.js",
+    "bot": "node ./src/startBot.js",
     "initdb": "prisma migrate dev --name init && prisma generate",
     "prisma-studio": "prisma studio"
   },

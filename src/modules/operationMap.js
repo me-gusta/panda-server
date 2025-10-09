@@ -5,14 +5,17 @@ import deepGetFromObject from '../utils/deepGetFromObject.js'
 import actionRouter from './actionRouter.js'
 import {convertMarkdownToDocx} from '@mohtasham/md-to-docx'
 import removeMd from 'remove-markdown'
-import mdToPdf from 'md-to-pdf'
+import {mdToPdf} from 'md-to-pdf'
 import splitTextIntoChunks from '../utils/splitTextIntoChunks.js'
+import {BASE_PROMPT} from './constants.js'
 
 
-const requestAI = async (messages) => {
+const requestAI = async (op, messages) => {
     try {
+        console.log('messages')
+        console.log(JSON.stringify(messages, null, 2))
         const resp = await chatOnce({
-            model: 'deepseek-v3.1-terminus',
+            model: 'gemini-2.5-flash',
             messages,
         })
 
@@ -22,6 +25,8 @@ const requestAI = async (messages) => {
             data: {success: resp},
         })
     } catch (e) {
+        console.log('--- error while requesting ai ---')
+        console.log(e)
         await actionRouter({
             action: 'aiResponse',
             telegramID: op.telegramID,
@@ -49,12 +54,13 @@ const createLoadingMessage = async (op) => {
             await bot.api.editMessageText(op.telegramID, loadingMessage.message_id, messageText)
         } catch (e) {
             console.error('Cannot edit loader')
+            clearInterval(loadingIntervalID)
         }
-    }, 1200)
+    }, 1200)[Symbol.toPrimitive]()
 
     return {
         loadingIntervalID,
-        loadingMessageID: loadingMessage.message_id
+        loadingMessageID: loadingMessage.message_id,
     }
 }
 
@@ -94,9 +100,7 @@ const operationMap = {
                         op.end()
                         return
                     }
-                    op.extendCtxProgram({
-                        input: [{type: 'text', text}],
-                    })
+                    op.program.context.input.push({type: 'text', text})
                     await op.next()
                 },
             },
@@ -111,20 +115,23 @@ const operationMap = {
                     if (!['png', 'jpg', 'jpeg', 'webm'].includes(extension)) {
                         return
                     }
-                    op.extendCtxProgram({
-                        input: [{type: 'photo', cdnURL}],
-                    })
+
+                    op.program.context.input.push({type: 'photo', cdnURL})
+
+                    console.log('ctx1')
+                    console.log(JSON.stringify(op.program.context, null, 2))
+                    console.log('ctx2')
+                    console.log(JSON.stringify(op.program.context, null, 2))
+
                     if (caption) {
-                        op.extendCtxProgram({
-                            input: [{type: 'text', text: caption}],
-                        })
+                        op.program.context.input.push({type: 'text', text: caption})
                     }
 
                     await bot.api.sendMessage(
                         op.telegramID,
                         'Это все?',
                         {
-                            reply_markup: new InlineKeyboard().text("Click me!", "submit-photo"),
+                            reply_markup: new InlineKeyboard().text("Да! Запустить обработку", "submit-photo"),
                         },
                     )
                 },
@@ -137,7 +144,7 @@ const operationMap = {
         },
         file: {
             init: async (op) => {
-                await bot.api.sendMessage(op.telegramID, 'Привет! Отправь изоббражение')
+                await bot.api.sendMessage(op.telegramID, 'Привет! Отправь файл')
             },
             triggers: {
                 tgFile: async (op, data) => {
@@ -145,20 +152,17 @@ const operationMap = {
                     if (!['docx', 'pdf', 'txt', 'md', 'odt', 'pages'].includes(extension)) {
                         return
                     }
-                    op.extendCtxProgram({
-                        input: [{type: 'file', cdnURL, extension}],
-                    })
+                    op.program.context.input.push({type: 'file', cdnURL, extension})
+
                     if (caption) {
-                        op.extendCtxProgram({
-                            input: [{type: 'text', text: caption}],
-                        })
+                        op.program.context.input.push({type: 'text', text: caption})
                     }
 
                     await bot.api.sendMessage(
                         op.telegramID,
                         'Это все?',
                         {
-                            reply_markup: new InlineKeyboard().text("Click me!", "submit-file"),
+                            reply_markup: new InlineKeyboard().text("Да! Запустить обработку", "submit-file"),
                         },
                     )
                 },
@@ -174,7 +178,8 @@ const operationMap = {
         text: {
             init: async (op) => {
                 const aiResponse = op.getCtxProgram('aiResponse')
-                await bot.api.sendMessage(op.telegramID, aiResponse, {parse_mode: 'MarkdownV2'})
+                await bot.api.sendMessage(op.telegramID, aiResponse)
+                await op.next()
             },
         },
         textNoFormat: {
@@ -182,6 +187,7 @@ const operationMap = {
                 const aiResponse = op.getCtxProgram('aiResponse')
                 const plainText = removeMd(aiResponse)
                 await bot.api.sendMessage(op.telegramID, plainText)
+                await op.next()
             },
         },
         docx: {
@@ -192,6 +198,7 @@ const operationMap = {
                 const inputFile = new InputFile(docxBuffer, 'файл.docx')
 
                 await bot.api.sendDocument(op.telegramID, inputFile)
+                await op.next()
             },
         },
         pdf: {
@@ -200,6 +207,7 @@ const operationMap = {
                 const pdf = await mdToPdf({content: aiResponse})
                 const inputFile = new InputFile(pdf.content, 'файл.pdf')
                 await bot.api.sendDocument(op.telegramID, inputFile)
+                await op.next()
             },
         },
     },
@@ -224,23 +232,24 @@ const operationMap = {
             } else if (aiProgram === 'poems') {
                 systemMessage.content = 'Ты профессор. сделай конспект.'
             }
+            systemMessage.content = BASE_PROMPT
 
             const userMessages = input.map(el => {
                 if (el.type === 'text') {
                     return {
-                        role: 'user',
-                        content: el.text,
+                        type: 'text',
+                        text: el.text,
                     }
                 } else if (el.type === 'photo') {
                     return {
-                        role: 'user',
+                        type: 'image_url',
                         image_url: {
                             url: el.cdnURL,
                         },
                     }
                 } else if (el.type === 'file') {
                     return {
-                        role: 'file',
+                        type: 'file',
                         file: {
                             filename: `file.${el.extension}`,
                             file_data: el.cdnURL,
@@ -249,16 +258,33 @@ const operationMap = {
                 }
             })
 
-            await bot.api.sendMessage(op.telegramID, 'Отправил запрос к нейронке')
+            const {loadingIntervalID, loadingMessageID} = await createLoadingMessage(op)
+
+            op.extendCtxProgram({
+                loadingIntervalID,
+                loadingMessageID,
+            })
 
 
-            requestAI([systemMessage, ...userMessages])
+            requestAI(op, [systemMessage, {role: 'user', content: userMessages}])
         },
         triggers: {
             tgText: async (op, data) => {
                 return true
             },
             aiResponse: async (op, data) => {
+                const loadingIntervalID = op.getCtxProgram('loadingIntervalID')
+                const loadingMessageID = op.getCtxProgram('loadingMessageID')
+
+
+                if (loadingIntervalID !== undefined) {
+                    clearInterval(loadingIntervalID)
+                }
+
+                try {
+                    await bot.api.deleteMessage(op.telegramID, loadingMessageID)
+                } catch (e) {}
+
                 if (data.error) {
                     await bot.api.sendMessage(op.telegramID, 'Ошибка нейросети')
                     op.end()
@@ -333,24 +359,25 @@ const operationMap = {
                     return
                 }
 
-                op.extendCtxProgram({messages: [{role: 'user', content: text}]})
+                op.program.context.messages.push({role: 'user', content: text})
+
                 const messages = op.getCtxProgram('messages')
                 if (messages.length > 10) {
                     messages.shift()
                     op.program.context.messages = messages
                 }
 
-                const {loadingIntervalID,loadingMessageID} = await createLoadingMessage(op)
+                const {loadingIntervalID, loadingMessageID} = await createLoadingMessage(op)
 
                 op.extendCtxProgram({
                     isRequestSent: true,
                     loadingIntervalID,
-                    loadingMessageID
+                    loadingMessageID,
                 })
 
-                requestAI(messages)
+                requestAI(op, messages)
             },
-            aiResponse: async (op,data) => {
+            aiResponse: async (op, data) => {
                 const {error, success} = data
 
                 const isRequestSent = op.getCtxProgram('isRequestSent')
@@ -374,7 +401,7 @@ const operationMap = {
                     op.end()
                     return
                 }
-                op.extendCtxProgram({messages: [{role: 'assistant', content: success}]})
+                op.program.context.messages.push({role: 'assistant', content: success})
 
                 const chunks = splitTextIntoChunks(success, 4000)
                 for (let chunk of chunks) {
@@ -382,7 +409,9 @@ const operationMap = {
                 }
 
                 if (loadingMessageID) {
-                    await bot.api.deleteMessage(op.telegramID, loadingMessageID)
+                    try {
+                        await bot.api.deleteMessage(op.telegramID, loadingMessageID)
+                    } catch (e) {}
                 }
 
             },
@@ -395,24 +424,30 @@ const operationMap = {
                 let docType = ''
                 if (['docx', 'pdf', 'txt', 'md', 'odt', 'pages'].includes(extension)) {
                     docType = 'file'
-                    op.extendCtxProgram({
-                        input: [{
-                            type: 'file',
-                            file: {
-                                filename: `file.${extension}`,
-                                file_data: cdnURL,
-                            },
-                        }],
+                    op.program.context.messages.push({
+                        role: 'user',
+                        content: [
+                            {
+                                type: 'file',
+                                file: {
+                                    filename: `file.${extension}`,
+                                    file_data: cdnURL,
+                                },
+                            }
+                        ]
                     })
                 } else if (['jpg', 'jpeg', 'png', 'webp'].includes(extension)) {
                     docType = 'image'
-                    op.extendCtxProgram({
-                        input: [{
-                            type: 'image',
-                            image_url: {
-                                url: cdnURL,
-                            },
-                        }],
+                    op.program.context.messages.push({
+                        role: 'user',
+                        content: [
+                            {
+                                type: 'image_url',
+                                image_url: {
+                                    url: cdnURL,
+                                },
+                            }
+                        ]
                     })
                 } else {
                     return
@@ -424,19 +459,24 @@ const operationMap = {
                     return
                 }
 
-                op.extendCtxProgram({
-                    input: [{
-                        type: 'text',
-                        content: caption,
-                    }],
-                })
+                if (caption) {
+                    op.program.context.messages.push({
+                        role: 'user',
+                        content: [
+                            {
+                                type: 'text',
+                                content: caption,
+                            }
+                        ]
+                    })
+                }
 
-                const {loadingIntervalID,loadingMessageID} = await createLoadingMessage(op)
+                const {loadingIntervalID, loadingMessageID} = await createLoadingMessage(op)
 
                 op.extendCtxProgram({
                     isRequestSent: true,
                     loadingIntervalID,
-                    loadingMessageID
+                    loadingMessageID,
                 })
 
                 requestAI(messages)

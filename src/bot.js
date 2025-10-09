@@ -3,8 +3,6 @@ import {Bot} from 'grammy'
 import {hydrateFiles} from '@grammyjs/files'
 import path from 'path'
 import {generateUniqueFileName, uploadToS3} from './utils/s3.js'
-import {getOperation} from './operations.js'
-import {nanoid} from 'nanoid'
 import actionRouter from './modules/actionRouter.js'
 import {ALLOWED_EXTENSIONS, MAX_FILE_SIZE} from './modules/constants.js'
 import {ensureUserExists, getUser, saveUser} from './utils/db.js'
@@ -13,12 +11,18 @@ import User from './modules/User.js'
 const {TG_BOT_TOKEN} = process.env
 
 
-/*
+const sendPrograms = async (ctx) => {
+    const telegramID = ctx.from.id
 
+    const userFromDB = await getUser(telegramID)
 
+    let out = `list of programs:\n`
+    for (let program of userFromDB.programs) {
+        out += `id: ${program.id}\noperations: ${program.operationLabelList.join('--')}\npointer: ${program.pointer}\n\n`
+    }
 
-
-*/
+    await ctx.reply(out)
+}
 
 export const bot = new Bot(TG_BOT_TOKEN, {
     client: {
@@ -46,25 +50,15 @@ bot.command('reset', async (ctx) => {
     user.clearPrograms()
 
     await saveUser(user)
+    await ctx.reply('reset /me')
 })
 
 
-bot.command('programs', async (ctx) => {
-    const telegramID = ctx.from.id
-
-    const userFromDB = await getUser(telegramID)
-
-    let out = `list of programs:\n`
-    for (let program of userFromDB.programs) {
-        out += `id: ${program.id}\noperations: ${program.operationLabelList.join('--')}\npointer: ${program.pointer}\n\n`
-    }
-
-    await ctx.reply(out)
-})
 
 bot.command('me', async (ctx) => {
     await ctx.reply(`ID: ${ctx.from.id}`)
-    await ctx.reply(`/start\n/reset\n/onboard\n/setmenu\n/programs`)
+    await sendPrograms(ctx)
+    await ctx.reply(`/start\n/reset\n/onboard\n/setmenu\n\n\n/aichat\n/konspekt`)
 })
 
 bot.command('aichat', async (ctx) => {
@@ -86,8 +80,8 @@ bot.command('aichat', async (ctx) => {
 bot.command('konspekt', async (ctx) => {
     const telegramID = 5000394127
     const program = ''
-    const inputType = ''
-    const outputType = ''
+    const inputType = 'file'
+    const outputType = 'text'
     const userFromDB = await getUser(telegramID)
     const user = new User(userFromDB)
 
@@ -98,14 +92,16 @@ bot.command('konspekt', async (ctx) => {
 
     await user.removeAIChat()
     await user.addProgram({
-        operationLabelList: [helloProgram, inputProgram, 'requestAI'],
+        operationLabelList: [helloProgram, inputProgram, 'requestAI', outputProgram],
         context: {
             aiProgram: 'konspekt',
-            helloText: '',
+            helloText: 'Приветствую!',
+            input: [],
         }
     })
 
     await saveUser(user)
+    await bot.api.sendMessage(telegramID, 'set')
 })
 
 bot.command('onboard', async (ctx) => {
@@ -180,7 +176,7 @@ bot.on('message:document', async (ctx) => {
 
     const fileName = document.file_name || 'file'
     const extension = path.extname(fileName).replace('.', '')
-    if (!ALLOWED_EXTENSIONS.has(extension)) {
+    if (!ALLOWED_EXTENSIONS.includes(extension)) {
         await ctx.reply('Я не знаю такой формат файла!')
         return
     }
