@@ -4,9 +4,12 @@ import {hydrateFiles} from '@grammyjs/files'
 import path from 'path'
 import {generateUniqueFileName, uploadToS3} from './utils/s3.js'
 import actionRouter from './modules/actionRouter.js'
-import {ALLOWED_EXTENSIONS, MAX_FILE_SIZE} from './modules/constants.js'
+import {ALLOWED_EXTENSIONS, IMAGE_EXTENSIONS, MAX_FILE_SIZE} from './modules/constants.js'
 import {ensureUserExists, getUser, saveUser} from './utils/db.js'
 import User from './modules/User.js'
+import {convertWordToPdf} from './utils/convertWordToPdf.js'
+import { promises as fsp } from 'node:fs'
+import textToPdf from './utils/textToPdf.js'
 
 const {TG_BOT_TOKEN} = process.env
 
@@ -177,23 +180,62 @@ bot.on('message:document', async (ctx) => {
     const fileName = document.file_name || 'file'
     const extension = path.extname(fileName).replace('.', '')
     if (!ALLOWED_EXTENSIONS.includes(extension)) {
-        await ctx.reply('Я не знаю такой формат файла!')
+        await ctx.reply(`Я не знаю такой формат файла: ${extension}!`)
         return
     }
     const caption = ctx.message.caption || ''
 
-    const fp = await file.download(`./data/tmp/${generateUniqueFileName('jpg')}`)
-    const cdnURL = await uploadToS3(fp)
+    const fp = await file.download(`./data/tmp/${generateUniqueFileName(extension)}`)
 
-    await actionRouter({
-        action: 'tgFile',
-        telegramID: ctx.from.id,
-        data: {
-            cdnURL,
-            extension,
-            caption,
-        },
-    })
+    if (IMAGE_EXTENSIONS.includes(extension)) {
+        const cdnURL = await uploadToS3(fp)
+
+        await actionRouter({
+            action: 'tgFile',
+            telegramID: ctx.from.id,
+            data: {
+                cdnURL,
+                extension,
+                caption,
+            },
+        })
+    } else if (extension === 'txt') {
+        const textContent = await fsp.readFile(fp, {encoding: 'utf-8'})
+        const outFp = path.join(process.cwd(), `./data/tmp/${generateUniqueFileName('pdf')}`)
+        await textToPdf(textContent, outFp)
+
+        const cdnURL = await uploadToS3(outFp)
+
+        await actionRouter({
+            action: 'tgFile',
+            telegramID: ctx.from.id,
+            data: {
+                cdnURL,
+                extension: 'pdf',
+                caption,
+            },
+        })
+
+    } else if (['doc', 'docx'].includes(extension)){
+        const outFp = path.join(process.cwd(), `./data/tmp/${generateUniqueFileName('pdf')}`)
+        const hasConverted = await convertWordToPdf(fp, outFp)
+        if (!hasConverted) {
+            await ctx.reply(`Не удалось конвертировать файл.`)
+            return
+        }
+        const cdnURL = await uploadToS3(outFp)
+
+        await actionRouter({
+            action: 'tgFile',
+            telegramID: ctx.from.id,
+            data: {
+                cdnURL,
+                extension: 'pdf',
+                caption,
+            },
+        })
+    }
+
 })
 
 bot.on("callback_query:data", async (ctx) => {

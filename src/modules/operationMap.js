@@ -217,20 +217,21 @@ const operationMap = {
             const systemMessage = {role: 'system', content: ''}
             const aiProgram = op.getCtxProgram('aiProgram')
 
+            let targetPrompt = ''
             if (aiProgram === 'konspekt') {
-                systemMessage.content = 'Ты профессор. сделай конспект.'
+                targetPrompt = 'Сделай конспект. не добавляй ничего нового. систематизируй то что есть.'
             } else if (aiProgram === 'zapominator') {
-                systemMessage.content = 'Ты профессор. сделай конспект.'
+                targetPrompt = 'Дан материал. сделай карточки для запоминания. с одной стороны карточки вопрос, с другой ответ. не меньше 20 карточек.'
             } else if (aiProgram === 'structure') {
-                systemMessage.content = 'Ты профессор. сделай конспект.'
+                targetPrompt = 'Дан материал. Структурируй текст. не добавляй ничего нового. систематизируй то что есть.'
             } else if (aiProgram === 'addWater') {
-                systemMessage.content = 'Ты профессор. сделай конспект.'
+                targetPrompt = 'Дан текст. Добавь воды в текст. Сделай этот текст в (ВАЖНО!!) два раза больше по количеству слов, сохранив смысл.'
             } else if (aiProgram === 'extractFrom') {
-                systemMessage.content = 'Ты профессор. сделай конспект.'
+                targetPrompt = 'Сделай OCR фото.'
             } else if (aiProgram === 'cheers') {
-                systemMessage.content = 'Ты профессор. сделай конспект.'
+                targetPrompt = ''
             } else if (aiProgram === 'poems') {
-                systemMessage.content = 'Ты профессор. сделай конспект.'
+                targetPrompt = ''
             }
             systemMessage.content = BASE_PROMPT
 
@@ -266,7 +267,11 @@ const operationMap = {
             })
 
 
-            requestAI(op, [systemMessage, {role: 'user', content: userMessages}])
+            requestAI(op, [
+                systemMessage,
+                {role: 'user', content: targetPrompt},
+                {role: 'user', content: userMessages}
+            ])
         },
         triggers: {
             tgText: async (op, data) => {
