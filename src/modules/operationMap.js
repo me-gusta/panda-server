@@ -8,6 +8,7 @@ import removeMd from 'remove-markdown'
 import {mdToPdf} from 'md-to-pdf'
 import splitTextIntoChunks from '../utils/splitTextIntoChunks.js'
 import {AICHAT_BASE_PROMPT, BASE_PROMPT, WELCOME_MESSAGE_TEXT} from './constants.js'
+import {notifyModerator} from '../utils/moderation.js'
 
 
 const requestAI = async (op, messages) => {
@@ -345,6 +346,7 @@ const operationMap = {
     },
     setBasic: {
         init: async (op) => {
+            await notifyModerator(`Новый пользователь ${op.telegramID}!\nusername: @${op.user.username || ''}\nonboarding: ${op.user.context.onboarding.q1}`)
             await bot.api.sendMessage(op.telegramID, 'Спасибо за ответ!\n\nЧем сегодня займемся? Открывай и выбирай программу\n 👉 /menu')
 
             op.user.addProgram({

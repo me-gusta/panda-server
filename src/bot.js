@@ -10,9 +10,9 @@ import User from './modules/User.js'
 import {convertWordToPdf} from './utils/convertWordToPdf.js'
 import { promises as fsp } from 'node:fs'
 import textToPdf from './utils/textToPdf.js'
+import {isModerator} from './utils/moderation.js'
 
 const {TG_BOT_TOKEN} = process.env
-
 
 const sendPrograms = async (ctx) => {
     const telegramID = ctx.from.id
@@ -45,6 +45,7 @@ bot.use(async (ctx, next) => {
 })
 
 bot.command('reset', async (ctx) => {
+    if (!isModerator(ctx.from.id)) return
     const telegramID = ctx.from.id
 
     const userFromDB = await getUser(telegramID)
@@ -59,12 +60,14 @@ bot.command('reset', async (ctx) => {
 
 
 bot.command('me', async (ctx) => {
+    if (!isModerator(ctx.from.id)) return
     await ctx.reply(`ID: ${ctx.from.id}`)
     await sendPrograms(ctx)
     await ctx.reply(`/start\n/reset\n/onboard\n/setmenu\n\n\n/aichat\n/konspekt`)
 })
 
 bot.command('aichat', async (ctx) => {
+    if (!isModerator(ctx.from.id)) return
     const telegramID = 5000394127
     const userFromDB = await getUser(telegramID)
     const user = new User(userFromDB)
@@ -80,34 +83,9 @@ bot.command('aichat', async (ctx) => {
     await saveUser(user)
 })
 
-bot.command('konspekt', async (ctx) => {
-    const telegramID = 5000394127
-    const program = ''
-    const inputType = 'file'
-    const outputType = 'text'
-    const userFromDB = await getUser(telegramID)
-    const user = new User(userFromDB)
-
-
-    const helloProgram = 'hello'
-    const inputProgram = 'input.' + inputType
-    const outputProgram = 'output.' + outputType
-
-    await user.removeAIChat()
-    await user.addProgram({
-        operationLabelList: [helloProgram, inputProgram, 'requestAI', outputProgram],
-        context: {
-            aiProgram: 'konspekt',
-            helloText: 'Приветствую!',
-            input: [],
-        }
-    })
-
-    await saveUser(user)
-    await bot.api.sendMessage(telegramID, 'set')
-})
 
 bot.command('onboard', async (ctx) => {
+    if (!isModerator(ctx.from.id)) return
     const telegramID = ctx.from.id
 
     const userFromDB = await getUser(telegramID)
@@ -122,6 +100,7 @@ bot.command('onboard', async (ctx) => {
 
 
 bot.command('setmenu', async (ctx) => {
+    if (!isModerator(ctx.from.id)) return
     const telegramID = ctx.from.id
 
     const userFromDB = await getUser(telegramID)
