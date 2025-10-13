@@ -7,7 +7,7 @@ import {convertMarkdownToDocx} from '@mohtasham/md-to-docx'
 import removeMd from 'remove-markdown'
 import {mdToPdf} from 'md-to-pdf'
 import splitTextIntoChunks from '../utils/splitTextIntoChunks.js'
-import {BASE_PROMPT} from './constants.js'
+import {BASE_PROMPT, WELCOME_MESSAGE_TEXT} from './constants.js'
 
 
 const requestAI = async (op, messages) => {
@@ -70,11 +70,11 @@ const operationMap = {
             tgText: async (op, data) => {
                 const {text} = data
 
-                if (text === '/start') {
+                if (['/start', '/menu'].includes(text)) {
                     const keyboard = new InlineKeyboard()
                         .webApp("Выбрать программу", "http://127.0.0.1:3010")
 
-                    await bot.api.sendMessage(op.telegramID, 'Привет! Это главное меню', {
+                    await bot.api.sendMessage(op.telegramID, '🐼 Чем могу помочь?', {
                         reply_markup: keyboard,
                     })
                 }
@@ -96,7 +96,7 @@ const operationMap = {
             triggers: {
                 tgText: async (op, data) => {
                     const {text} = data
-                    if (text === '/start') {
+                    if (['/start', '/menu'].includes(text)) {
                         op.end()
                         return
                     }
@@ -305,19 +305,22 @@ const operationMap = {
     onboarding: {
         before: {
             init: async (op) => {
-                await bot.api.sendMessage(op.telegramID, 'Onboarding set')
+                await bot.api.sendMessage(op.telegramID, WELCOME_MESSAGE_TEXT, {
+                    parse_mode: 'HTML',
+                    reply_markup: new InlineKeyboard().text("Да!", "onboard"),
+                })
             },
             triggers: {
-                tgText: async (op, data) => {
-                    if (data.text === '/start') {
-                        await op.next()
-                    }
+                tgInlineButton: async (op, data) => {
+                    const {callbackData} = data
+                    if (callbackData !== "onboard") return
+                    await op.next()
                 },
             },
         },
         q1: {
             init: async (op) => {
-                await bot.api.sendMessage(op.telegramID, 'Привет пользователь! Кто ты?')
+                await bot.api.sendMessage(op.telegramID, '<b>Вопрос [1/1]</b>\n\nКем ты работаешь или на каком факультете учишься?', {parse_mode: 'HTML'})
             },
             triggers: {
                 tgText: async (op, data) => {
@@ -342,7 +345,8 @@ const operationMap = {
     },
     setBasic: {
         init: async (op) => {
-            await bot.api.sendMessage(op.telegramID, 'Спасибо за ответы!')
+            await bot.api.sendMessage(op.telegramID, 'Спасибо за ответ!\n\nЧем сегодня займемся? Открывай и выбирай программу\n 👉 /menu')
+
             op.user.addProgram({
                 operationLabelList: ['menuSender'],
             })
@@ -359,7 +363,7 @@ const operationMap = {
                 if (isRequestSent) return
 
                 const {text} = data
-                if (text === '/start') {
+                if (['/start', '/menu'].includes(text)) {
                     op.end()
                     return
                 }

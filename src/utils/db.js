@@ -22,7 +22,7 @@ export async function ensureUserExists(ctx) {
         })
         await addProgram(user.id, {
             context: {},
-            operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
+            operationLabelList: ['onboarding.before', 'onboarding.q1', 'setBasic'],
             pointer: 0,
         })
     } else {

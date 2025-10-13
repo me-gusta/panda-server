@@ -114,7 +114,7 @@ bot.command('onboard', async (ctx) => {
     const user = new User(userFromDB)
 
     await user.addProgram({
-        operationLabelList: ['onboarding.before', 'onboarding.q1', 'onboarding.q2', 'setBasic'],
+        operationLabelList: ['onboarding.before', 'onboarding.q1', 'setBasic'],
     })
 
     await saveUser(user)

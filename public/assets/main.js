@@ -35,11 +35,11 @@ const inputTypeGroup = `
             <span class="nb-card-content">
                 <span class="nb-card-title">
                     <span class="nb-label">
-                        <input value="file" name="inputType" type="radio" class="nb-checkbox default" checked>
-                        Файл
+                        <input value="text" name="inputType" type="radio" class="nb-checkbox default" checked>
+                        Напечатаю сам(а)
                     </span>
                 </span>
-                <span class="nb-card-text mb-0!">Если тебя есть pdf или word файл</span>
+                <span class="nb-card-text mb-0!">Просто напиши что нужно сделать</span>
             </span>
         </label>
 
@@ -59,11 +59,11 @@ const inputTypeGroup = `
             <span class="nb-card-content">
                 <span class="nb-card-title">
                     <span class="nb-label">
-                        <input value="text" name="inputType" type="radio" class="nb-checkbox default">
-                        Напечатаю сам(а)
+                        <input value="file" name="inputType" type="radio" class="nb-checkbox default">
+                        Файл
                     </span>
                 </span>
-                <span class="nb-card-text mb-0!">Просто напиши что нужно сделать</span>
+                <span class="nb-card-text mb-0!">Если тебя есть pdf или word файл</span>
             </span>
         </label>
 
@@ -86,18 +86,6 @@ const outputTypeGroup = `
                 </span>
             </span>
             <span class="nb-card-text mb-0!">Сообщение придет тебе в телеграм</span>
-        </span>
-    </label>
-
-    <label class="nb-card cursor-pointer">
-        <span class="nb-card-content">
-            <span class="nb-card-title">
-                <span class="nb-label">
-                    <input value="no-format" name="outputType" type="radio" class="nb-checkbox default">
-                    Просто текст, но без форматирования
-                </span>
-            </span>
-            <span class="nb-card-text mb-0!">Без <i>курсива</i>, <b>полужирного</b> и т.д.</span>
         </span>
     </label>
 
@@ -209,8 +197,17 @@ window.addEventListener('load', () => {
                         hasOutput: true,
                     })
                     document.querySelector('#startButton')
-                        .addEventListener('click', () => {
+                        .addEventListener('click', async () => {
                             console.log('start zapominator')
+                            const inputType = document.querySelector('[name="inputType"]:checked').value
+                            const outputType = document.querySelector('[name="outputType"]:checked').value
+
+                            await callBackend('/api/startProgram', {
+                                program: 'zapominator',
+                                inputType,
+                                outputType
+                            })
+                            window.Telegram.WebApp.close()
                         })
                     return
                 }
@@ -221,8 +218,17 @@ window.addEventListener('load', () => {
                         hasOutput: true,
                     })
                     document.querySelector('#startButton')
-                        .addEventListener('click', () => {
+                        .addEventListener('click', async () => {
                             console.log('start structure')
+                            const inputType = document.querySelector('[name="inputType"]:checked').value
+                            const outputType = document.querySelector('[name="outputType"]:checked').value
+
+                            await callBackend('/api/startProgram', {
+                                program: 'structure',
+                                inputType,
+                                outputType
+                            })
+                            window.Telegram.WebApp.close()
                         })
                     return
                 }
@@ -233,20 +239,37 @@ window.addEventListener('load', () => {
                         hasOutput: true,
                     })
                     document.querySelector('#startButton')
-                        .addEventListener('click', () => {
+                        .addEventListener('click', async () => {
                             console.log('start addWater')
+                            const inputType = document.querySelector('[name="inputType"]:checked').value
+                            const outputType = document.querySelector('[name="outputType"]:checked').value
+
+                            await callBackend('/api/startProgram', {
+                                program: 'addWater',
+                                inputType,
+                                outputType
+                            })
+                            window.Telegram.WebApp.close()
                         })
                     return
                 }
                 if (action === 'extractFrom') {
                     spawnSettings({
                         title: 'Извлечь текст с фото',
-                        hasInput:true,
+                        hasInput:false,
                         hasOutput: true,
                     })
                     document.querySelector('#startButton')
-                        .addEventListener('click', () => {
+                        .addEventListener('click', async () => {
                             console.log('start extractFrom')
+                            const outputType = document.querySelector('[name="outputType"]:checked').value
+
+                            await callBackend('/api/startProgram', {
+                                program: 'extractFrom',
+                                inputType:'photo',
+                                outputType
+                            })
+                            window.Telegram.WebApp.close()
                         })
                     return
                 }
