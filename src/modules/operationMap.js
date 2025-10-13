@@ -7,7 +7,7 @@ import {convertMarkdownToDocx} from '@mohtasham/md-to-docx'
 import removeMd from 'remove-markdown'
 import {mdToPdf} from 'md-to-pdf'
 import splitTextIntoChunks from '../utils/splitTextIntoChunks.js'
-import {BASE_PROMPT, WELCOME_MESSAGE_TEXT} from './constants.js'
+import {AICHAT_BASE_PROMPT, BASE_PROMPT, WELCOME_MESSAGE_TEXT} from './constants.js'
 
 
 const requestAI = async (op, messages) => {
@@ -384,7 +384,10 @@ const operationMap = {
                     loadingMessageID,
                 })
 
-                requestAI(op, messages)
+                requestAI(op, [
+                    {role: 'system', content: AICHAT_BASE_PROMPT},
+                    ...messages
+                ])
             },
             aiResponse: async (op, data) => {
                 const {error, success} = data
@@ -425,6 +428,7 @@ const operationMap = {
 
             },
             tgFile: async (op, data) => {
+                return
                 const isRequestSent = op.getCtxProgram('isRequestSent')
                 if (isRequestSent) return
 
