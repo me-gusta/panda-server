@@ -5,7 +5,7 @@ import path from 'path'
 import {generateUniqueFileName, uploadToS3} from './utils/s3.js'
 import actionRouter from './modules/actionRouter.js'
 import {ALLOWED_EXTENSIONS, IMAGE_EXTENSIONS, MAX_FILE_SIZE} from './modules/constants.js'
-import {ensureUserExists, getUser, saveUser} from './utils/db.js'
+import {addProgram, ensureUserExists, getUser, saveUser} from './utils/db.js'
 import User from './modules/User.js'
 import {convertWordToPdf} from './utils/convertWordToPdf.js'
 import { promises as fsp } from 'node:fs'
@@ -39,7 +39,17 @@ bot.api.config.use(hydrateFiles(bot.token, {
 
 bot.use(async (ctx, next) => {
     if (!(ctx.from && ctx.from.id)) return
-    await ensureUserExists(ctx)
+    const isNewUser = await ensureUserExists(ctx)
+
+    if (isNewUser) {
+        const userFromDB = await getUser(ctx.from.id)
+        const user = new User(userFromDB)
+        await user.addProgram({
+            context: {},
+            operationLabelList: ['onboarding.before', 'onboarding.q1', 'setBasic'],
+            pointer: 0,
+        })
+    }
 
     await next()
 })

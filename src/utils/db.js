@@ -20,11 +20,7 @@ export async function ensureUserExists(ctx) {
                 context: {},
             },
         })
-        await addProgram(user.id, {
-            context: {},
-            operationLabelList: ['onboarding.before', 'onboarding.q1', 'setBasic'],
-            pointer: 0,
-        })
+        return true
     } else {
         if (
             user.username !== username ||
