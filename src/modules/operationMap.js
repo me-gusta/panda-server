@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import {bot} from '../bot.js'
 import {InlineKeyboard, InputFile} from 'grammy'
 import {chatOnce} from '../utils/ai.js'
@@ -72,8 +73,9 @@ const operationMap = {
                 const {text} = data
 
                 if (['/start', '/menu'].includes(text)) {
+                    const {TG_WEBAPP_LINK} = process.env
                     const keyboard = new InlineKeyboard()
-                        .webApp("Выбрать программу", "http://127.0.0.1:3010")
+                        .webApp("Выбрать программу", TG_WEBAPP_LINK)
 
                     await bot.api.sendMessage(op.telegramID, '🐼 Чем могу помочь?', {
                         reply_markup: keyboard,
