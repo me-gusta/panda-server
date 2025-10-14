@@ -12,7 +12,7 @@ import { promises as fsp } from 'node:fs'
 import textToPdf from './utils/textToPdf.js'
 import {isModerator} from './utils/moderation.js'
 
-const {TG_BOT_TOKEN} = process.env
+const {TG_BOT_TOKEN, TG_ENV} = process.env
 
 const sendPrograms = async (ctx) => {
     const telegramID = ctx.from.id
@@ -29,12 +29,12 @@ const sendPrograms = async (ctx) => {
 
 export const bot = new Bot(TG_BOT_TOKEN, {
     client: {
-        environment: 'test',
+        environment: TG_ENV,
     },
 })
 
 bot.api.config.use(hydrateFiles(bot.token, {
-    environment: 'test',
+    environment: TG_ENV,
 }))
 
 bot.use(async (ctx, next) => {
