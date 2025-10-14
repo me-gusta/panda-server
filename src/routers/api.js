@@ -48,6 +48,19 @@ router.post('/startProgram', async (req, res) => {
     const userFromDB = await getUser(telegramID)
     const user = new User(userFromDB)
 
+    if (program === 'aiChat') {
+        await user.addProgram({
+            operationLabelList: ['aiChat'],
+            context: {
+                messages: [],
+                isRequestSent: false,
+            }
+        })
+
+        await saveUser(user)
+        res.json({ok: true, user_id: result.user?.id})
+        return
+    }
 
     const helloProgram = 'hello'
     const inputProgram = 'input.' + inputType

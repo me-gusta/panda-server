@@ -150,12 +150,18 @@ window.addEventListener('load', () => {
     const mainPageButtonList = document.querySelectorAll('#pageMain button')
     mainPageButtonList
         .forEach(el=> {
-            el.addEventListener('click', () => {
+            el.addEventListener('click', async () => {
                 const action = el.getAttribute('data-btn')
 
                 if (action === 'aiChat') {
-                    // bot mode set aiChat
-                    // close WebApp
+                    console.log('start konspekt')
+
+                    await callBackend('/api/startProgram', {
+                        program: 'aiChat',
+                        inputType: '',
+                        outputType: ''
+                    })
+                    window.Telegram.WebApp.close()
                     return
                 }
                 if (action === 'cheers') {
