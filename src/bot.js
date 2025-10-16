@@ -67,7 +67,16 @@ bot.command('reset', async (ctx) => {
     await ctx.reply('reset /me')
 })
 
+bot.catch((err) => {
+    console.log('----- <error> -----')
+    console.log(err)
+    console.log('----- </error> -----')
+})
 
+bot.command('error', async (ctx) => {
+    if (!isModerator(ctx.from.id)) return
+    await bot.api.sendMessage(4145115, 'Hello')
+})
 
 bot.command('me', async (ctx) => {
     if (!isModerator(ctx.from.id)) return
