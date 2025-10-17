@@ -9,8 +9,11 @@ export default class User {
     telegramID
 
     constructor(userFromDB) {
-        const {id, programs, context, telegramID} = userFromDB
+        const {id, programs, context, telegramID, username,firstName,lastName} = userFromDB
         this.id = id
+        this.username = username
+        this.firstName = firstName
+        this.lastName = lastName
         this.context = context
         this.telegramID = parseInt(telegramID)
         for (let p of programs) {

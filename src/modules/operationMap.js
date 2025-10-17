@@ -351,7 +351,7 @@ const operationMap = {
             await notifyModerator(`Новый пользователь ${op.telegramID}!\nusername: @${op.user.username || ''}\nonboarding: ${op.user.context.onboarding.q1}`)
             await bot.api.sendMessage(op.telegramID, 'Спасибо за ответ!\n\nЧем сегодня займемся? Открывай и выбирай программу\n 👉 /menu')
 
-            op.user.addProgram({
+            await op.user.addProgram({
                 operationLabelList: ['menuSender'],
             })
             await op.next()
