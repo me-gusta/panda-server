@@ -12,6 +12,8 @@ import { promises as fsp } from 'node:fs'
 import textToPdf from './utils/textToPdf.js'
 import {isModerator} from './utils/moderation.js'
 
+fsp.mkdir(path.join(process.cwd(), './data/tmp'), { recursive: true })
+
 const {TG_BOT_TOKEN, TG_ENV} = process.env
 
 const sendPrograms = async (ctx) => {
