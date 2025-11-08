@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1122925661
+firstName: Гульсина
+lastName: null
+username: g_kh2
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Я работаю няней
+[tgText]
+text:
+/menu

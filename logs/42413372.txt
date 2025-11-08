@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 42413372
+firstName: niks
+lastName: null
+username: n1kkis
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+стоматологический
+[tgText]
+text:
+/menu

@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 8032834444
+firstName: ᅠ ︎ ︎ ︎ ︎ ᅠ ︎ ︎ ︎ ︎ ᅠ
+lastName: null
+username: Suba42_67
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Учусь в 8 классе
+[tgText]
+text:
+/menu

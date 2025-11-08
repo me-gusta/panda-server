@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 2114408979
+firstName: Альфия
+lastName: Бусарева
+username: alya_busareva
+[tgText]
+text:
+/start

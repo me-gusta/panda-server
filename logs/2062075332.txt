@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 2062075332
+firstName: Кsuny 🌎
+lastName: null
+username: KsunyTur
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Пожелание в чат туризма доброе утро
+[tgText]
+text:
+/menu

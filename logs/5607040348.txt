@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5607040348
+firstName: Егор
+lastName: Мироничев
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Я в 9 классе
+[tgText]
+text:
+/menu

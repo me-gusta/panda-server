@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 8037318583
+firstName: 𝘪𝘮𝘱𝘰𝘴𝘵𝘦𝘳.𝘭𝘷𝘭¹
+lastName: null
+username: lvlNumberOne
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

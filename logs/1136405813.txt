@@ -1,0 +1,21 @@
+[UserInfo]
+telegramID: 1136405813
+firstName: massara
+lastName: null
+username: null
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Психология
+[tgText]
+text:
+/menu
+[tgText]
+text:
+Ну

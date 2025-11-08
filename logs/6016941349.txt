@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 6016941349
+firstName: .
+lastName: null
+username: tiraMmi
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard

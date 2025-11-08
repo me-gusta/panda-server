@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5600067282
+firstName: Елена Полякова
+lastName: Страхование РЕСО
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Страховой агент
+[tgText]
+text:
+/menu

@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 853724269
+firstName: Анастасия
+lastName: null
+username: Esparcet
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

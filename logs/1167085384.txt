@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 1167085384
+firstName: Лизааа
+lastName: null
+username: liiiizzz
+[tgText]
+text:
+/start perefrazirovat-tekst

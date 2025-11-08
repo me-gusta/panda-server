@@ -1,0 +1,13 @@
+[UserInfo]
+telegramID: 292311894
+firstName: 🍓Veronika🍓
+lastName: null
+username: Princess_Veronica
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Нигде не работаю и не учусь

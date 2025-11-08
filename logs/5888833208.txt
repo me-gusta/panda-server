@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 5888833208
+firstName: ꧁༒ᴷ͢͢͢ᵃᵗʸ༒
+lastName: null
+username: null
+[tgText]
+text:
+/start

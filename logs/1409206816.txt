@@ -1,0 +1,91 @@
+[UserInfo]
+telegramID: 1409206816
+firstName: Артемий
+lastName: null
+username: Deputat_TurgenevoCity
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Юриспруденция
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqrpm-oa9cek6l.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqs3m-wd9xa5cl.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqsc4-xgd01p0l.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqsl3-kjptfvuh.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqstr-guo5b8al.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqt2g-jh8sjwk8.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqtbc-mruzv0yw.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqtm4-axl0499j.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqtt5-v2q8a6d6.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguhqu1g-rgbtlphf.jpg
+extension: jpg
+caption: 
+[tgInlineButton]
+callbackData: submit-photo
+[aiResponse]
+success:
+1. Основные системы римского частного права
+
+Римское частное право прошло три этапа развития. Сначала существовало квиритское (цивильное) право, регулировавшее отношения между римскими гражданами. Затем появилось преторское право, которое регулировало отношения между римскими гражданами и перегринами, а также между перегринами на территории Римского государства. Наконец, возникло право народов, которое регулировало отношения между всеми жителями Римской империи.
+
+2. Основные черты римского права
+
+Римское право отличалось формализмом, религиозностью, обрядностью и символизмом. Оно было основано на принципах справедливости и равенства.
+
+3. Деление гражданского процесса
+
+Гражданский процесс в Риме делился на две стадии: in iure и in iudicio. На первой стадии стороны обращались к магистрату, который определял правовую основу спора. На второй стадии дело рассматривалось судьей, который выносил решение.
+
+4. Виды и средства преторской защиты
+
+Преторская защита включала в себя различные виды исков:
+* Вещные иски (actiones in rem) – направлены на защиту права собственности.
+* Личные иски (actiones in personam) – направлены на защиту личных прав.
+* Штрафные иски (rei vindicatio) – направлены на возмещение ущерба.
+* Иски о возмещении убытков и наказании ответчика (actio doli) – направлены на возмещение убытков и наказание ответчика.
+* Иски о возмещении ущерба и наказании ответчика (actio mixta) – направлены на возмещение ущерба и наказание ответчика.
+* Личные иски, направленные на получение вещей (денег, других заменимых вещей) или совершение действий (condictiones) – направлены на получение вещей или совершение действий.
+* Публичные иски (actio populates) – направлены на защиту публичных интересов.
+* Фиктивные иски (actiones ficticiae) – иски, в которых судье предписывалось рассматривать дело так, как если бы существовали определенные факты.
+
+Преторская защита также включала в себя интердикты (запреты) и реституции (восстановление прежнего положения).
+
+5. Исковая давность и отказ в иске
+
+Исковая давность – это установленный срок, в течение которого лицо может обратиться с иском о защите своего нарушенного права. В классическом римском праве исковая давность не была установлена, но в Юстиниановом праве она составляла 30 лет.
+
+Отказ в иске мог быть обусловлен различными причинами, например, отсутствием правовой основы для иска или истечением срока исковой давности.

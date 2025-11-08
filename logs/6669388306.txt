@@ -1,0 +1,455 @@
+[UserInfo]
+telegramID: 6669388306
+firstName: 🩶Ксения Сергеевна🩶
+lastName: null
+username: Smir_Ksenia_717
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Педагогический
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf064-2fu16cho.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf0cy-gqbe2ehw.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf0ha-nt1q2g3j.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf0lp-ojvp3dak.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf0qs-ppzjrbp2.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf0v9-j14lalc5.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf101-glkfdutm.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf14q-ip1mzk8x.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf19b-5wcv1y0v.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf1ed-thldr98y.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf1jg-d8yzaaiy.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf1oi-nsara636.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf1sq-m8ty7jks.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf1wz-0y2doxp5.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf21m-11hlpp3j.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf26d-3rqv4lmt.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf2au-6n3ix8de.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf2fb-516ok31k.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf2k0-7jxczxcg.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf2om-5ftcleqs.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf2t5-33lr03o8.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf2z0-59nl961u.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf33h-t8mp460r.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf4ab-x5vb9sup.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf4hc-rdmdp7dc.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf4ms-r05k9x4s.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf4s2-chki4j1t.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf4z4-1kqwxqex.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf53t-5jp9anvz.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf599-7p1m5eda.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf5ew-kwv5idvm.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf5l5-801tmsf4.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf5ps-8pabvxd4.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf5uj-6cvs8t2b.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf60g-lhcq1t3n.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf66c-dopqgfhp.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf6db-j4ub5e31.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkf6i4-bc5dvwho.jpg
+extension: jpg
+caption: 
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfrpd-gxa9o9ff.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfry4-tb4wf3w8.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfs71-l2jwlv7x.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfsga-62qkca9e.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfsse-daczaw9s.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkft2w-tqamdc4x.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkft9v-u0en6r6n.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkftgv-chq0pvmx.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkftpf-y4rvi17s.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkftx3-1ot684so.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfu65-xs51t7hy.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfufu-mcngfqkk.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfuqy-a1k93c15.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfv14-5x2dbc6m.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfvaa-0z6b2aq2.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfvgx-mqnw2pew.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfvpu-vzvcth8w.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfvwa-1yho5s87.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfw30-px65qako.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfw9p-1o2yef4j.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfwh6-yii191ln.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfwny-6xyhflsl.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfwur-37rb4jb8.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfx1w-rvhdbsk4.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfxa8-rbh2dt1b.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfxif-rzx6x70i.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfxpy-hsasugr4.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfxye-njixlvq6.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfy8r-zinmafbj.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfyfg-ws7lchsh.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfym3-4i7cjhms.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfyuq-kwzl3ks9.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfz2f-epknijcf.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfzb2-hgss1szy.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfzjw-86uvhy9m.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfzqw-1izo7d5w.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkfzxl-vno444d4.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwkg04n-88kji8dq.jpg
+extension: jpg
+caption: 
+[tgInlineButton]
+callbackData: submit-photo
+[aiResponse]
+success:
+Опорно-двигательная система (ОДС)
+
+I. Структурно-функциональная схема ОДС
+
+ОДС состоит из двух частей:
+1. Активная часть (мышцы)
+2. Пассивная часть (скелет)
+
+II. Функции активной части (мышц)
+
+1. Формообразующая: определяет форму и размеры тела.
+2. Защитная: создает полости тела для защиты внутренних органов.
+3. Двигательная: обеспечивает передвижение тела и его частей в пространстве.
+4. Энергетическая: превращает химическую энергию в механическую и тепловую.
+
+III. Функции пассивной части (скелета)
+
+1. Двигательная: обеспечивает передвижение тела и его частей в пространстве.
+2. Защитная: создает полости тела для защиты внутренних органов.
+3. Формообразующая: определяет форму и размеры тела.
+4. Опорная: опорный остов организма.
+5. Кроветворная: красный костный мозг – источник клеток крови.
+6. Обменная: кости – источник Ca, F и других минеральных веществ.
+
+IV. Химический состав костей
+
+Кости состоят из:
+1. Неорганических веществ (65-70% сухой массы):
+   - Гидроксиапатит, сульфаты, карбонаты (в скелете взрослого 1,2 кг кальция, 530 г фосфора, 11 г магния и около 30 других элементов).
+   - Придают прочность.
+2. Органических веществ:
+   - Белки, липиды, аминокислоты и др.
+   - Придают упругость.
+
+V. Костная ткань
+
+- В состав костной ткани входят органические и неорганические вещества (соли кальция, фосфора, железа, магния).
+- Органические вещества придают эластичность. Если их сжечь, кость рассыпается на небольшие твердые частички.
+- Неорганические вещества придают твердость. Если удалить неорганические вещества выдерживанием кости в кислоте, то кость становится эластичной и ее можно будет завязать в узел.
+- Костная ткань представлена клетками костной ткани – остеоцитами и межклеточным веществом.
+- У детей в костной ткани содержание минеральных веществ значительно ниже, поэтому их скелет более гибкий и эластичный, способен легко деформироваться под воздействием внешних причин – тяжелой физической работы, неправильных положений тела и т.п.
+
+VI. Строение и виды костей
+
+- Различают компактное вещество костной ткани (тело кости) и губчатое вещество (в головках костей).
+- Кость покрыта надкостницей, суставные поверхности – хрящом.
+- Надкостница выполняет защитную, трофическую (содержит кровеносные сосуды и нервы) и костеобразовательную функции.
+- С внутренней стороны надкостницы находятся остеобласты, обеспечивающие рост кости в толщину.
+- На границе с костной полостью находятся остеокласты – клетки-разрушительницы костной ткани.
+- Головки костей, покрытые хрящом, называются эпифизами, места прикрепления сухожилий – апофизы, тело кости – диафиз, участок между эпифизом и диафизом – метафиз.
+- В метафизе имеется прослойка остеобластов, из-за деления которых происходит рост кости в длину. Рост костей прекращается к 23-25 годам у мужчин, к 18-20 годам у женщин.
+- Эпифизы состоят из губчатого вещества, в ячейках – красный костный мозг.
+- Внутри диафиза канал с желтым костным мозгом.
+
+Виды костей:
+Различают четыре группы костей:
+1. Трубчатые (длинные – плечевая, короткие – фаланги пальцев)
+2. Губчатые (длинные – ребра, короткие – кости запястья, предплюсны)
+3. Плоские (лопатки)
+4. Смешанные (основание черепа, позвонки)
+
+VII. Рост костей (окостенение)
+
+- Рост в длину: за счет замены хрящевой ткани костной.
+- Рост в толщину: за счет клеток надкостницы. Рост кости в ширину ограничен. Это возможно благодаря особым клеткам – остеокластам.
+
+VIII. Число костей в теле человека
+
+- Позвоночник: 24
+- Грудная клетка: 25
+- Тазовый пояс с крестцом и копчиком: 4
+- Мозговой отдел черепа: 8
+- Лицевой отдел черепа: 15
+- Плечевой пояс вместе с верхними конечностями: 64
+- Нижние конечности: 60
+- Итого: 200
+
+IX. Соединения костей
+
+1. Неподвижные:
+   - За счет швов (например, кости черепа).
+   - За счет срастания костей (например, крестец, тазовые кости).
+2. Полуподвижные:
+   - За счет хрящей (например, межпозвоночные диски, соединения ребер с грудиной).
+3. Подвижные:
+   - За счет суставов.
+   - Сустав состоит из суставной головки, суставной впадины, суставных хрящей, суставной жидкости и связок.
+
+X. Скелет новорожденного и взрослого человека
+
+- Скелет новорожденного ребенка состоит из 350 костей, а скелет взрослого человека вмещает в себя 206 костей.
+- Скелет новорожденного более подвижен, что позволяет легко появляться на свет, а со временем некоторые кости срастаются.
+- Скелет подразделяют на 2 группы: добавочной и осевой.
+- Осевой скелет: грудная клетка, череп и позвоночник.
+- Добавочный пояс: верхний и нижний конечности.
+
+XI. Отделы тела (скелет)
+
+- Голова (череп)
+- Туловище (позвоночник, грудная клетка)
+- Верхняя конечность
+- Нижняя конечность
+
+XII. Череп
+
+- Череп включает 23 кости.
+- В состав мозгового отдела входят:
+  - Парные кости: височные и теменные.
+  - Непарные кости: лобная, затылочная, клиновидная и решетчатая. Затылочная кость имеет большое затылочное отверстие.
+- В состав лицевого черепа входят парные и непарные кости.
+  - Парные: верхнечелюстные, носовые, нижние носовые раковины, скуловые, слезные, небные.
+  - Непарные кости: сошник, нижняя челюсть, подъязычная.
+- При рождении кости ребенка очень гибкие (много органики), кости черепа не сросшиеся, между ними большие роднички – соединительнотканная перепонка.
+- У пожилых людей кости становятся хрупкими из-за большого количества неорганических веществ.
+
+XIII. Роднички
+
+- Обычно к моменту рождения ребенка два последних родничка закрываются, но могут быть выражены у недоношенных детей.
+- Малый (задний) родничок закрывается к 3 месяцам, большой (передний) – обычно к 12-15 месяцам.
+- Швы черепной крыши закрываются только в возрасте старше 20 лет
+[aiResponse]
+error: true
+[tgText]
+text:
+Краткий конспект
+[tgText]
+text:
+/start

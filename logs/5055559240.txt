@@ -1,0 +1,130 @@
+[UserInfo]
+telegramID: 5055559240
+firstName: Гончаров
+lastName: Иван
+username: AR1591902
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Учусь на 1 курсе
+[tgText]
+text:
+/menu
+[tgText]
+text:
+Когда пришлешь конспект?
+[tgText]
+text:
+/start konspekt
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mhp2f84s-wn6k8rm5.pdf
+extension: pdf
+caption: 
+[tgInlineButton]
+callbackData: submit-file
+[aiResponse]
+success:
+Конспект
+
+1.  Введение в криптографию
+    *   Криптографические алгоритмы и их применение.
+    *   Основные понятия: шифрование, дешифрование, ключ.
+
+2.  Симметричные алгоритмы шифрования
+    *   Примеры: DES, 3DES, AES.
+    *   Принципы работы: блочное и потоковое шифрование.
+    *   Режимы работы: ECB, CBC, CFB, OFB, CTR.
+
+3.  Асимметричные алгоритмы шифрования
+    *   Примеры: RSA, Diffie-Hellman, ECC.
+    *   Принципы работы: открытый и закрытый ключ.
+    *   Применение: обмен ключами, цифровая подпись.
+
+4.  Хеш-функции
+    *   Примеры: MD5, SHA-1, SHA-256.
+    *   Свойства: односторонность, устойчивость к коллизиям.
+    *   Применение: проверка целостности данных, хранение паролей.
+
+5.  Цифровая подпись
+    *   Принципы работы: использование асимметричных алгоритмов.
+    *   Применение: аутентификация, подтверждение авторства.
+
+6.  Инфраструктура открытых ключей (PKI)
+    *   Понятия: сертификаты, центры сертификации.
+    *   Применение: управление ключами, доверие.
+
+7.  Протоколы защищенной связи
+    *   Примеры: SSL/TLS, IPsec.
+    *   Принципы работы: установление защищенного канала.
+
+8.  Криптоанализ
+    *   Методы атаки: брутфорс, атаки по словарю, атаки на основе известных текстов.
+    *   Важность стойкости алгоритмов.
+
+9.  Квантовая криптография
+    *   Основные принципы: использование квантовых эффектов.
+    *   Перспективы и вызовы.
+
+10. Экзистенциальные аспекты криптографии
+    *   Свобода и безопасность в цифровом мире.
+    *   Ответственность за использование криптографических средств.
+    *   Выбор между приватностью и контролем.
+[aiResponse]
+success:
+Конспект
+
+1.  Введение:
+    *   A10C00D$8CR b.
+    *   B$5CA0: A05D 2D 9 C05D 8Ca4 A$5C 8C >C D$5Dt5D BC$5C0=Ca9 C$>C"=D.
+
+2.  Основные положения:
+    *   A0;C = D4@Ca:C.
+    *   A0@C,GC,,=D CT;C,,:Ca9 AaBCTGCTAD$2CT=C0>C 2Ca9C0K.
+    *   A0;C = «A 0D 1C @CaAD 0».
+    *   B 8C K D BC@Ca= C05D5CB CT;C,,:Ca9 AaBCTGCTAD$2CT=C0>C 2Ca9C0>C.
+    *   A00Dt0C > A$5C 8C >C D$5Dt5D BC$5C0=Ca9 A$>C"=D.
+    *   B02C :D40Dd8D ?D >CAKD,,;CT=C0>D BC.
+    *   A00D BD4?C 5C08CR=C #C@C8C0C.
+    *   A;Ca:C 4C CT=C,,=C4@C 4C.
+    *   A 8D$2C 7C CaAC 2D2.
+    *   B >Ct4C =C,,5 C=D$8C48D$;CT@Ca2D :Ca9 C >C ;FC,,8 C, ;CT=CB0;C,,7.
+    *   A0@C,GC,,=D CT;C,,:Ca9 AaBCTGCTAD$2CT=C0>C 2Ca9C0K B ACT=D$0C @D0 “3' 3Ca4C 2 AT2D.
+    *   A 8D,,L D$>C LC > A$5C 8C >C @C,,BC =C,,O C0@Ca4Ca;Cd0C 0 D >C0@CaBC,,2C OD$LD O A45D <C.
+    *   B 8D$CC FC,,O C" C$@Ca?CR : C 5D$C 1941 C4>CD0 A00 D0BCa<DD>C05 A48D$;CT@ D 5D,,0CTB C0.
+    *   A48D$;CT@ C KC ;C,,4CT@Ca< C00D BC,,8 A0!AD A0A :CaBCa@C0 C0@C,,4CT@Cd8C$0C 0D LC,,4CT.
+
+3.  Дополнительные сведения:
+    *   At0C ;DaGCT=C0KCR 6CT=D :Ca3Ca :Ca=Dd;C 3CT@D0 C2CT=D 1D NC 2Ca 2D 5CA0 C0@C=D44C,E.
+    *   ATIE >CD=Ca9 Dt5D BCa9 C00Dd8D BC >C 8CD5Ca;Ca3C,,8 C KC > C@C9C05CR =CT?D 8D6BC,5 C.
+    *   A$0Cd=Ca>D$<CTBC,,BDAA GD$> C05CAFD 1D ;C, CC$5D 5C0K C" AC 0C >D BC, D 0D=Ca9 A @CA:.
+    *   Aa4C,,= C,,7 C =D$8C >CA<D4=C,,AD$8Dt5D :C,,E C0;C :C BC2 C48D$;CT@Ca2D :Ca9 A45D <C =C,,8.
+    *   A0;C = «A 0D 1C @CaAD 0» B 0Ct@C 1CaBC0 C0;C=C =CT<CTFC >C4> C$>C"=D ?D >D$8C"!B !B.
+
+4.  Продолжение основных положений:
+    *   A0> C0;C =D2 C @C0D >D AC 22C9C00 D !B!B_4Ca;Cd=C_1D ;C =C GC BDAAD0 2 CA0CR “C 3. C,.
+    *   A45D <C =C,,O C0@C,,2C 5C ;C : C$>CT=C0KCA 4CT9D BC$8D0< D 2Ca8DR ACANCt=C,,:Ca2:.
+    *   A,,BC ;C,N;.
+    *   BD8C0;D0=CD8D.
+    *   B CCAKC08D.
+    *   A$5C03D 8D.
+    *   B;Ca2C :C,,N;.
+    *   BT>D 2C BC,,N.
+    *   A0>CA8CA> D0BCa3Ca=C AD$>D >C05 C05CAFT2 C$>CT2C ;C, 4Ca1D >C$>C LDdK C,,7 A,,AC00C0.
+    *   B 8C K A@C AC0>C D <C,,8, C00DT>CD0D”8CTAD0 =C 7C ?C4CR AD$@C=D ACaAD$>D0;C, 8Cr.
+
+5.  Дополнительные сведения (продолжение):
+    *   B$0C0: A -1, C0>DtBC, =CTCD67C$8CAKC 4C O C05CA5Dd:C,,E Ca@D44C,,9C" ?CT@C$KCR <CTAD0.
+    *   At0CA5D$8CAA GD$> Ct=C GC,,BCT;DA=C O Dt0D BDA 0D <C,,8 B!B (C>C 5CR <C'=D>C 4C B) C0C.
+    *   B 0C0> D4BD >CAA 5D”Q C" 3 A =C ACa2CTBD :D4N D$5D @C,BCa@C,,N D BC ;C, ?D >C 8D 0D$LD C.
+    *   A" # R . AAa Ca;CaBCa2 C$KD BD4?C,,; C0> D 0CD8Ca A Ca1D 0D”5C08CT< C ACa2CTBD :Ca<D2 =C.
+    *   B46CR #B 8Da=D0 8CA8 C KC 7C EC$0Dt5C0 C,,DA=DA, C : 28 C,,NC0O – AA8C0ACa D 5C4> Ct0 C0.
+    *   C,BC3CR ?D 8D,,;CaADA ACD0D$LD O. A0@C, MD$>CA ?CaBCT@C, 2CT@CA0DTBC 2C 2D 5CA0 D0.
+    *   C4>CDK A$BCa@Ca9 CA8D >C$>C 2Ca9C0K.
+    *   B$5CA=CR <CT=
+[tgText]
+text:
+Составь и пришли готовый конспект

@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1697285722
+firstName: Ваня
+lastName: Плакунов
+username: Ivanx770
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Старший гладовшик
+[tgText]
+text:
+/menu

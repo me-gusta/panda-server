@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1241103284
+firstName: Ксения
+lastName: null
+username: kashtan4ikova
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Главный бухгалтер
+[tgText]
+text:
+/menu

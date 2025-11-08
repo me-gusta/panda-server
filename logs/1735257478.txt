@@ -1,0 +1,13 @@
+[UserInfo]
+telegramID: 1735257478
+firstName: Жасмина
+lastName: null
+username: zhasmina005
+[tgText]
+text:
+/start konspekt
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

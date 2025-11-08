@@ -1,0 +1,72 @@
+[UserInfo]
+telegramID: 7901147527
+firstName: Аида
+lastName: null
+username: null
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Фармация
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtd9sj-da5cm2z3.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtd9yn-31ca2ont.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtda39-2p85bdjz.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtda7t-1c37ccg1.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdacm-79ujjca9.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdahh-p620wxmm.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdamh-j0ortlly.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdasl-kto5jscw.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdaxk-5qdjswa0.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdb6j-hf1hnthi.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdbcl-y32u0jyv.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdbik-3htpc2tc.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdbmz-tswyx8xd.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgvtdbrp-6ultvqb1.jpg
+extension: jpg
+caption: 

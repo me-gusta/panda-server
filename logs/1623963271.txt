@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 1623963271
+firstName: Провоторова
+lastName: Жаннетта
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

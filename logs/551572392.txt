@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 551572392
+firstName: Алена
+lastName: Шахнина
+username: shahnina_alena
+[tgText]
+text:
+/start home
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Копирайтер, писатель
+[tgText]
+text:
+/menu
+[tgText]
+text:
+Создай обложку для книги

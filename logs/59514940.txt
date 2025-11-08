@@ -1,0 +1,11 @@
+[UserInfo]
+telegramID: 59514940
+firstName: Aндрей Воеводин
+lastName: надежный риелтор в СПб
+username: avoevodinspb
+[tgText]
+text:
+/start
+[tgText]
+text:
+Давай

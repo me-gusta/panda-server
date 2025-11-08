@@ -1,0 +1,20 @@
+[UserInfo]
+telegramID: 6988921457
+firstName: zlodeyka
+lastName: null
+username: I_am_zlodeyka
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+я школе
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mguxhlvw-p73ilu8b.jpg
+extension: jpg
+caption: переведи на русский

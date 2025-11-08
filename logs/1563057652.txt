@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1563057652
+firstName: Мария Саблина
+lastName: null
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Подвижной состав железных дорог
+[tgText]
+text:
+/menu

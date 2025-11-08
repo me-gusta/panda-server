@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5112309507
+firstName: 🌸🦋Мария
+lastName: 🌸🦋
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Кладовщик
+[tgText]
+text:
+/menu

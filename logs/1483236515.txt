@@ -1,0 +1,129 @@
+[UserInfo]
+telegramID: 1483236515
+firstName: ♱✞✟✞✟✞✟♱
+lastName: null
+username: Die_of_happiness
+[tgText]
+text:
+/start konspekt
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Школа
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8o071-sbvdgqep.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8o0ox-vey2r9cm.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8o0zg-7qn0aihr.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8o18p-o2gefb16.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8o1hh-vcmc3pah.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8o1qb-b70s19gu.jpg
+extension: jpg
+caption: 
+[tgInlineButton]
+callbackData: submit-photo
+[aiResponse]
+success:
+Конспект по произведению И. А. Гончарова "Мильон терзаний"
+
+1.  **Комедия "Горе от ума" как отражение нравов:**
+    *   Комедия "Горе от ума" представляет собой "картину нравов", где через столкновение старого и нового, прошлого и настоящего, показаны мотивы мыслей и поступков людей.
+    *   Главная роль в комедии принадлежит Чацкому, без которого она была бы неполной.
+
+2.  **Связь Чацкого с Грибоедовым и его роль:**
+    *   Чацкий связан с Грибоедовым общими ощущениями: автор "Горя от ума" переживал драматический разлад, между мечтательностью и скептицизмом.
+    *   Чацкий говорил о том, что чувствует себя гонимым человеком, которого не понимают окружающие.
+    *   Он ощущает себя "лишним" в обществе, где нет места для его самобытности.
+    *   Чацкий — это "душевный путь не только Грибоедова, но и всех, кто переживает подобное".
+
+3.  **Образ Чацкого:**
+    *   Чацкий — герой, полный жизни, ума, энергии, но не нашедший применения своим способностям.
+    *   Он не желает служить, прислуживаться, приспосабливаться к обществу.
+    *   Его ум, остроумие, сарказм — это его оружие против пошлости и лицемерия.
+    *   Чацкий — "мильон терзаний", он страдает от непонимания, от невозможности найти своё место в мире.
+    *   Его любовь к Софье — это ещё один источник его страданий, так как она не разделяет его чувств.
+    *   Чацкий — это "вечный обличитель лжи, заправитель в пословицу: «Один в поле не воин»".
+    *   Он не боится быть одиноким в своих убеждениях.
+    *   Его уход из Москвы — это не поражение, а скорее победа, так как он сохраняет свою независимость и достоинство.
+
+4.  **Образ Софьи:**
+    *   Софья — это сложный и противоречивый образ.
+    *   Она умна, чувствительна, но её воспитание и окружение сформировали в ней определённые черты характера.
+    *   Её любовь к Молчалину — это проявление её бунтарства против общества, но в то же время это и её ошибка.
+    *   Она не видит истинной сущности Молчалина, её привлекает его покорность и услужливость.
+    *   Софья — это "жертва" своего окружения, она запуталась в своих чувствах и не может найти выход.
+    *   Её роль в комедии — страдательная, она не может быть счастлива.
+
+5.  **Образ Молчалина:**
+    *   Молчалин — это типичный представитель общества, где ценится услужливость, лицемерие, умение приспосабливаться.
+    *   Он не имеет собственного мнения, его цель — продвижение по службе и получение выгоды.
+    *   Его любовь к Софье — это притворство, он использует её для достижения своих целей.
+    *   Молчалин — это "бездушный муж-мальчик", "идеал московских мужей".
+
+6.  **Конфликт в комедии:**
+    *   Конфликт в комедии — это столкновение Чацкого с фамусовским обществом.
+    *   Это конфликт между старым и новым, между свободомыслием и консерватизмом, между искренностью и лицемерием.
+    *   Чацкий — это "мильон терзаний", он страдает от этого конфликта, но не сдаётся.
+
+7.  **Авторская позиция:**
+    *   Авторская мысль обязывает вытекать из самого взаимодействия персонажей.
+    *   Гончаров не даёт оценочных суждений, он показывает реальность такой, какая она есть.
+    *   Он придерживается позиции экзистенциализма, показывая человека в его свободе выбора и ответственности за свои поступки.
+[tgInlineButton]
+callbackData: submit-photo
+[tgInlineButton]
+callbackData: submit-photo
+[tgInlineButton]
+callbackData: submit-photo
+[tgInlineButton]
+callbackData: submit-photo
+[tgInlineButton]
+callbackData: submit-photo
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8vq1j-hl7w4ntz.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8vqa5-5ru1p5t7.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8vqf6-qud0kdce.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8vqk9-n7cw3l22.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8vqp6-vcnvt4jf.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mho8vqtu-xuu6wwgv.jpg
+extension: jpg
+caption: 
+[tgText]
+text:
+Меню

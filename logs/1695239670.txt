@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 1695239670
+firstName: Ольга
+lastName: Денисенко
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

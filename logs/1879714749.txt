@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1879714749
+firstName: Светлана
+lastName: Портнова
+username: massag_dd
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Массажист
+[tgText]
+text:
+/menu

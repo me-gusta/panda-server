@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 815518667
+firstName: Анастасия
+lastName: null
+username: kakastik
+[tgText]
+text:
+/start

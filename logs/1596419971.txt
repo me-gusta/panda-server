@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1596419971
+firstName: Татьяна
+lastName: null
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Контролёр
+[tgText]
+text:
+/menu

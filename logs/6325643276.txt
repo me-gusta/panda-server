@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 6325643276
+firstName: 𝓨𝓾𝓵𝓲𝔂𝓪
+lastName: null
+username: Ksss_m
+[tgText]
+text:
+/start sokratit
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Ветеринарный фельдшер
+[tgText]
+text:
+/menu
+[tgText]
+text:
+Сократи текст по фото

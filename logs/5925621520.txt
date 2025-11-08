@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 5925621520
+firstName: nastyllka
+lastName: null
+username: nastasia_1407
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+давай тае
+[tgText]
+text:
+давай так ты можешь ответить на мой вопрос?
+[tgText]
+text:
+/menu

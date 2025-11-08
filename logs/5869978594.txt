@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 5869978594
+firstName: Ell
+lastName: null
+username: ell_man
+[tgText]
+text:
+/start

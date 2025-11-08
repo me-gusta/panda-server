@@ -1,0 +1,52 @@
+[UserInfo]
+telegramID: 962363035
+firstName: daaaaaa
+lastName: null
+username: daaaashaaaaaaab
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+н
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mh95gjiz-kq9tvrtr.pdf
+extension: pdf
+caption: 
+[tgInlineButton]
+callbackData: submit-file
+[aiResponse]
+success:
+Конспект:
+
+1.  **Исторический контекст и хронология:**
+    *   1613–1645 гг. – период, обозначенный как "Aô@C2C´5CÔ8CR C,,EC 8C'0 B >CÄ0CÔ>C$0".
+    *   1613 г. – "Aô5D 8Cä4 D <D4BD² 7C :Cä=Dt8C´ADò 2 1613 C2â :Cä3CD0 At5CÄAC£8C' !Cä1Cä@ C„7C @C ; Dd0D 5CÂ".
+    *   1645 г. – "AÄ8DT0C,„; B >CÄ0CÔ>C" CCÄ5D_21645 C4>CDC C, 5CÄC CÔ0D ;CT4Cä2C ; D BC @D,,8C' AD´=, A ;CT-".
+    *   1617 г. – "Aô>DÔBCä<D2 2 1617 C2â 2 C2â !D$>C´1Cä2Câ 1D´; Ct0C£;DäGCT= B BCä;C >C$AC£8C' <C„@CÔKC' 4Cä".
+    *   1633 г. – "B@Cä: AD5D4;C„=D:Cä3Câ?CT@CT<C„@C„O C„AD$5C¤0C²2 1633 C4>CDC".
+    *   1631 г. – "Aä4CÔ0C¤> D46CR2 1631".
+    *   1649 г. – "B >C>D =Cä5 D4;Cä6CT=C,5 1649 C2à".
+    *   1648 г. – "A" <C 5 1648 C2â 2 C 8D$2CR ?D 8 Ad5C´BDE".
+    *   1651 г. – "A" DCT2D 0C′5 1651 C2â ?Cä;DÄAC£0Dò 0D <C,„O C$BCä@C4;C ADA 2 Cô@CT4CT;D²".
+    *   1652 г. – "B 0Ct>Dt0D >C$0C$HC„ADA 2 Cô>CÄ>D”8 B$CD FC,,8, BT<CT;DÄ=C,,FC£8C' 2 1652 C2â".
+    *   1654–1656 гг. – "AÔ0 Dd5D :C2CÔKDR ACälCä@CE 1654 – 1656 C43".
+    *   1660 г. – "B46CR 2 D 5D 5CD8CÔ5 1660-DR 3C2â".
+    *   1666–1667 гг. – "BtBCä1D² >C£>CÔGC BCT;DÄ=Câ 7C 2CT@D,8D$L D 5DD>D <D2Â FC @DA ACä7C$0C² 2 1666-1667 C43".
+
+2.  **Ключевые понятия и их взаимосвязи:**
+    *   **AÄ>D :Cä2D :Cä5 Dd0D AD$2Câ ?D 8 CD8CÔ0D BC,,8 B >CÄ0CÔ>C$KDR 2 XVII C"à**: Обозначает центральную тему или объект исследования в XVII веке.
+    *   **A$>D AD$0CÔ>C$;CT=C,,5 C$;C AD$8 C" AD$@C=CP**: Указывает на конкретный аспект или проблему, связанную с "A$>D".
+    *   **A" c23. Cô>C'>Cd5CÔ8CR CäAC£>C$AC£>C4> Dd0D AD$2C_1D´;Câ 2D 5 CTICR >D$GC OCÔ=D'<. B BI**: Детализирует "Cô>C'>Cd5CÔ8CR" и его связь с "AD$2C_1D´;Câ".
+    *   **A" c B 3. CÄ>D :Cä2D :Cä5 Cô@C 2C,BCT;DÄAD$2Câ CC 5CD8C´> C£0Ct0DtLDâ AD$0D HC„=D2 Cä=C8**: Описывает "CÄ>D :Cä2D :Cä5" и его отношение к "AD$2Câ CC 5CD8C´>".
+    *   **Aô>CôKD$:C_HC$5CDAC£>C4> C£>D>C´O Ct0C£@CT?C,,BDÄADò 2 AÔ>C$3Cä@C4CR 8 CD>CKD$L [**: Указывает на "Aô>CôKD$:C" и его связь с "AÔ>C$3Cä@C4CR".
+    *   **B BCä;C >C$AC£8C' <C„@ C, CTCC´8CÔAC£>CR?CT@CT<C,@C,5**: Описывает "B BCä;C >C$AC£8C'" и его характеристики.
+    *   **Aô>DÔBCä<D2 2 1617 C2â 2 C2â !D$>C´1Cä2Câ 1D´; Ct0C£;DäGCT= B BCä;C >C$AC£8C' <C„@CÔKC' 4Cä C' (C$5Dd8Dò 2C7C$@CIC;CC2C4>D>CBA 7C =CT9 CäAD$0C$0C′8D LD 5C$5D=D′5 Cô@C,1C ;D C' 4C3Ca2Cä@ Cô@CT4D4ACA0D$@C„2C ; D 2Cä1Cä4D2 BCä@C4>C$;C, <CT6CDC CD2D4<Dò AD$@C**: Детализирует "Aô>DÔBCä<D2" и его связь с "BCä@C4>C$;C".
+    *   **C"' ?D 8 DÔBCä<D CD AC£8CÂ :D4?Dd0CÂ 1D´;Câ 7C ?D 5D”5CÔ> Cô@Ca5Ct6C BDA GCT@CT7D$5D @**: Указывает на "DÔBCä<D CD AC£8CÂ" и его связь с "Cô@Ca5Ct6C".
+    *   **B$0C£8CA >C @C7Cä<, AÄ>D :C$0 D4BD 0D$8C′0 CD0Cd5 D$>D" =CT1Cä;DÄHCä9 D4GC AD$>Dt5C¢ C**: Описывает "B$0C£8CA" и его отношение к "D4GC AD$>Dt5C¢".
+    *

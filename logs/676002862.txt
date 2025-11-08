@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 676002862
+firstName: Любовь
+lastName: null
+username: lyubov1503
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Сторисмейкер
+[tgText]
+text:
+/menu

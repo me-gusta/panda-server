@@ -1,0 +1,43 @@
+[UserInfo]
+telegramID: 7315592895
+firstName: Александр
+lastName: null
+username: AleksandrNsk154
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Директором
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mh4sinm4-73lcsmsi.jpg
+extension: jpg
+caption: 
+[tgInlineButton]
+callbackData: submit-photo
+[aiResponse]
+success:
+V8
+KOMPRESSOR
+DUCATI
+DUCATI
+TESTASTRETTA
+brembo
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mh4sjiyb-r9zzdkxb.jpg
+extension: jpg
+caption: 
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mh4sl9eh-m6mlpd6h.jpg
+extension: jpg
+caption: 
+[tgInlineButton]
+callbackData: submit-photo
+[aiResponse]
+success:
+На изображении представлен серый бульдог, находящийся в металлической клетке. Собака сидит на белой подушке. Задний фон клетки закрыт темной тканью.

@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 5193885621
+firstName: Black Demoness
+lastName: null
+username: Asanastar
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

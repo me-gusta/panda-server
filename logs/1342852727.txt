@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1342852727
+firstName: .Тимур
+lastName: null
+username: RussiaMMM
+[tgText]
+text:
+/start home
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Юрист 5 курс
+[tgText]
+text:
+/menu

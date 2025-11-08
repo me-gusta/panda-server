@@ -1,0 +1,40 @@
+[UserInfo]
+telegramID: 1074001685
+firstName: Валюша
+lastName: null
+username: ValentinaOgulo
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Повар
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgxqaf4s-lf0yi44p.jpg
+extension: jpg
+caption: 
+[tgInlineButton]
+callbackData: submit-photo
+[aiResponse]
+success:
+Аккаунт Google
+Пароль
+
+Выберите надежный пароль и не используйте его для других аккаунтов. Подробнее...
+
+Возможно, на некоторых устройствах вам придется повторно войти в аккаунт. Подробнее о том, на каких устройствах не нужно будет снова выполнять вход...
+
+Новый пароль
+dfkz09021204
+
+Надежность пароля: надежный
+Минимальная длина пароля – 8 символов. Не используйте пароли от других сайтов или варианты, которые злоумышленники смогут легко подобрать. Зачем это нужно?
+
+Подтвердите новый пароль
+
+Сменить пароль

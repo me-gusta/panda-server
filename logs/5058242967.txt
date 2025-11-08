@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5058242967
+firstName: Юля Иевлева
+lastName: null
+username: ievlevajuliya
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+.
+[tgText]
+text:
+/menu

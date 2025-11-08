@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 1357894861
+firstName: anrtxxx
+lastName: null
+username: null
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+мед кибернетика
+[tgText]
+text:
+/menu
+[tgText]
+text:
+ну

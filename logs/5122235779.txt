@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 5122235779
+firstName: germzzz
+lastName: null
+username: germzzz1
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

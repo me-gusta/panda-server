@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1124095819
+firstName: Бобрик 🦫
+lastName: null
+username: HohoL3X
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Художник мастер педагог
+[tgText]
+text:
+/menu

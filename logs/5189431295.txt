@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5189431295
+firstName: Варвара
+lastName: Шалагинова
+username: shalaginovavary
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Сделать конспект, краткое содержание основных идей без потери смысла
+[tgText]
+text:
+/menu

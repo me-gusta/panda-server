@@ -1,0 +1,23 @@
+[UserInfo]
+telegramID: 536363571
+firstName: Irina
+lastName: null
+username: ms_irkis
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+студент 2 курс,лебечное дело
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mhkppzzf-vgrm4lzd.pdf
+extension: pdf
+caption: 
+[tgText]
+text:
+конспект файл с выделением основных моментов
+[tgText]
+text:
+/menu

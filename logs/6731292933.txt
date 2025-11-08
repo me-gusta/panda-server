@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 6731292933
+firstName: 𝗉𝖺𝗅𝖾𝗇𝗄𝗈 жордан
+lastName: null
+username: kosyarl
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard

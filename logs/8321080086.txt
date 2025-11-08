@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 8321080086
+firstName: брбрпатапим
+lastName: null
+username: p1doraszs
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Я учусь на поварское кондитерское дело 1 курса, хотя до этого учился в этом же колледже на ту же самую профессию 2 с половиной года и мог бы сейчас быть на 3 курсе
+[tgText]
+text:
+/menu

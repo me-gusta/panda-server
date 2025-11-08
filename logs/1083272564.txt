@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 1083272564
+firstName: Elena Ustinova Ataman
+lastName: null
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Психолог
+[tgText]
+text:
+/menu
+[tgText]
+text:
+/menu

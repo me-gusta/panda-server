@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 825985504
+firstName: foxy
+lastName: null
+username: foxy1077
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Менеджер
+[tgText]
+text:
+Написать пост
+[tgText]
+text:
+/menu

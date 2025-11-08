@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 844264591
+firstName: Ksenia
+lastName: Simakova
+username: ksekeijio
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+На экологогическом
+[tgText]
+text:
+/menu
+[tgText]
+text:
+.

@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 980695071
+firstName: Валерия
+lastName: Бочарова детская финграм🫰
+username: bocharova_networker
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Педагог по бизнес образованию,самозанятая
+[tgText]
+text:
+/menu

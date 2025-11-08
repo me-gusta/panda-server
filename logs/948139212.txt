@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 948139212
+firstName: D
+lastName: null
+username: whooisthisbye
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Учусь
+[tgText]
+text:
+/menu

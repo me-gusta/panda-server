@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 577769119
+firstName: Александра🧞‍♀️
+lastName: null
+username: Smkmmms
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Юриспруденция
+[tgText]
+text:
+/menu

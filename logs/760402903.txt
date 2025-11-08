@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 760402903
+firstName: Ирина
+lastName: Абрамян
+username: geralba_brand
+[tgText]
+text:
+/start

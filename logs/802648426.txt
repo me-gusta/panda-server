@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 802648426
+firstName: Juliya
+lastName: null
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

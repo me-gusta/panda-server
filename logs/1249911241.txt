@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1249911241
+firstName: ylusssss
+lastName: null
+username: ylusssss
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+/start konspekt
+[tgText]
+text:
+сделай конспект из текста в файле

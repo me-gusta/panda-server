@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 935827745
+firstName: Оксана
+lastName: null
+username: Ksanka_anka
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Контент-менеджер
+[tgText]
+text:
+/menu

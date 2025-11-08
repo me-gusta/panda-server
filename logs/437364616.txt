@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 437364616
+firstName: Hasmik
+lastName: Sahakyan @spring__jasmin
+username: Sahakyan_Hasmik
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Я юрист
+[tgText]
+text:
+/menu

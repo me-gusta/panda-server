@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 5175579642
+firstName: шуруповерт \(º﹃º )/
+lastName: null
+username: shurupavyortt
+[tgText]
+text:
+/start dopolnit-text
+[tgInlineButton]
+callbackData: onboard

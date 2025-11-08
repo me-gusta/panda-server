@@ -1,0 +1,112 @@
+[UserInfo]
+telegramID: 1460777886
+firstName: Диана
+lastName: Бережная
+username: dina_berezh
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Институт общественных наук  и массовых коммуникаций
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwi59eg-e5eczsqq.pdf
+extension: pdf
+caption: 
+[tgInlineButton]
+callbackData: submit-file
+[aiResponse]
+success:
+Конспект:
+
+1.  **Введение в тему:**
+    *   B;C 9CB â
+    *   B$5CA0 5. Aä@C40CÔ8Ct0Dd8Cä=CÔ>-Cô@C2Cä2D´5 C ACô5C£BD² DCä@CÄ8D >C$0CÔ8Dò 8CÔDD OD
+
+2.  **Основные положения и определения:**
+    *   B;C 9CB "â
+    *   1. BD>D <C,,@Cä2C =C,,5 CäACÔ>C$=D´E DÔ;CT<CT=D$>C" 8CÔDD 0D BD CC£BD4@D² AÄ
+    *   B 0D ACÄ0D$@C„2C O C" FCT;Cä< C,,=DD@C AD$@D4:D$CDC C£0C¢ =CT>D$JCT<C´5CÄCDâ GC AD$L
+    *   AÔ0C,,1Cã;CT5 C :D$CC ;DÄ=Cä9 D ;CT4D45D" ADt8D$0D$L C„=DD@CAD$@D4:D$CD CD >Dd8C ;DÄ=
+    *   B$0C£8CA >C @C7Cä<, D >Dd8C ;DÄ=C O C,,=DD@CAD$@D4:D$CD 0, C$:C´NDt0DäIC O C£>CÄ?Cä=CT
+    *   Aä4CÔ8CA 8Cr 2C 6CÔ5C”HC,E D BD 0D$5C48Dt5D :C,E Cô@C,,>D 8D$5D$>C" ACäFC„0C´LCÔ>C4> D 0
+    *   B ;C 9CB 2â Cã;Cä4CT6CÔ0Dò ?Cã;C„BC„:C_2D'AD$CC00CTB CD;Dò 8CÔDD 0D BD CC£BD4@D² >D=Cä
+    *   A =C ;C,,7 CÔ>D <C BC,,2CÔ>C4> Cô@C 2Ca2Cä3Câ >C 5D ?CTGCT=C,„O D 5C ;C,„,7C FC,„8 C4>D CCDOD A
+    *   B ;CT4D45D" ?Cä4Dt5D :CÔCD$L, DtBCâ BCä;DÄ:Câ 2 2014 C2â =C_DCT4CT@C ;DÄ=Cä< D4@C2CÔ5 C
+    *   A" @CT3C,,>CÔ0C´LCÔ>CÂ 7C :Cä=Cä4C BCT;DÄAD$2CRÂ =C ?D 8CÄ5D_2At0C£>CÔ5 C4>D >CD0 AÄ=
+    *   B ;C 9CB Bâ CÔDD 0D BD CC£BD4@C <Cä;Cä4CT6CÔ>C' ?Cä;C,,BC,,:C, >D$=CäAC„BD O C¢ GC„AC´C C
+    *   A" ?CT@C$>CA AC´CDt0CR r :C : C£>CÄ?Cä=CT=D" <Cä;Cä4CT6CÔ>C' ?Cä;C,BC,,:C,Â :CäBCä@D΄9 Cô@
+    *   /C" GC AD$8 D4AD$0CÔ>C$;CT=C„O D0Ct@Dô4Cä2 Cô> Cã?C´0D$5 D$@D44C @C1CBCÔ8C£>C" 1D:
+    *   /D >C4;C ACä2C =C„O D 0Ct@Dô4Cä2 Cä?C´0D$KD$@D44C8 D$0D 8DD=CâÔ:C$0C´8DD8C£0Dd8Cä=C
+    *   A$<CTAD$5 D BCT<D;CT4D45D" >D$<CTBC,,BDA =CTAD$0C 8C'LCÔ>D BDÂ 2 D >Dd8C ;DÄ=CâÔCC
+    *   A$> C$BCä@Cä< D ;D4GC 5 — C„=DD@CAD$@D4:D$CD C CÄ>C´>CD5Cd=Cä9 Cô>C´8D$8C£8 D ;CT4D
+    *   B ;C 9CB Râ !Ca7CD0CÔ8CR ACäFC,,0C´LCÔKDR AC´CCd1 CD;Dò <Cä;Cä4CT6C, 8 C40D 0CÔBC,,@Ca2C
+    *   /CôAC,,ECä;Cä3C,GCTAC£8CS2
+    *   /C05CD0C4>C48Dt5D :C,5;
+    *   /Dä@C,4C,GCTAC£8CS2
+    *   /CÔ0D :Cä;C3C„GCTAC£8CRâ
+    *   AälCa7CÔ0Dt5CÔK C£0D$5C4>D 8C, <Cä;Cä4CT6C,Â :CäBCä@D'< Cä:C 7D´2C ND$ADò CD ;D43C,â -D$>
+    *   /CÄ>C´>CDKCR 8CÔ2C ;C,,4D32
+    *   /CD5CÄ>C 8C′8Ct>C$0CÔ=D′5 C$>CT=CÔ>D ;D46C IC,,5;
+    *   /C´8Dd0, CAC$>C>Cd4CT=CÔKCR 8Cr CDt@CT6CD5CÔ8C'A 8D ?Cä;CÔODäIC,„E CÔ0C£0Ct0CÔ8CS2
+    *   /C´8Dd0, Cô@CäHCT4D,,8CR ;CTGCT=C,,5 CäB CÔ0D :Cä<C=C,,8, D$>C£AC,,:Cä<C=C,8, C ;C£>C4>C´8C
+    *   /CÄ>C´>CDKCR ACT<DÄ8.
+    *   AD0C'LCÔ5C"HCT5 D 0Ct2C,BC,,5 D >Dd8C ;DÄ=D'ED ;D46C_4C´O CÄ>C'>CD5Cd8, C$8CDK C, ?Cä@D
+    *   B$0C£8CA >C @C7Cä<, C$?CT@C$KCR?D 8 DD>D <C,,@Cä2C =C,„8 CäACÔ>C$=D'E DÔ;CT<CT=D$>C"
+    *   B ;C 9CB bâ D 2D07C, A DÔBC„<C" # " 3. AÄ8CÔ8D
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mgwi7zof-mkkxyjlb.pdf
+extension: pdf
+caption: 
+[tgInlineButton]
+callbackData: submit-file
+[aiResponse]
+success:
+Конспект:
+
+1.  **Введение в предмет:**
+    *   B;C 9CB â
+    *   B$5CA0 5. Aä@C40CÔ8Ct0Dd8Cä=CÔ>-Cô@C2Cä2D´5 C ACô5C£BD² DCä@CÄ8D >C$0CÔ8Dò 8CÔDD OD
+
+2.  **Основные понятия и определения:**
+    *   B;C 9CB "â
+    *   1. BD>D <C,,@Cä2C =C,,5 CäACÔ>C$=D´E DÔ;CT<CT=D$>C" 8CÔDD 0D BD CC£BD4@D² AÄ
+    *   B 0D ACÄ0D$@C„2C O C" FCT;Cä< C,,=DD@C AD$@D4:D$CDC C£0C¢ =CT>D$JCT<C´5CÄCDâ GC AD$L
+    *   AÔ0C,,1Cã;CT5 C :D$CC ;DÄ=Cä9 D ;CT4D45D" ADt8D$0D$L C„=DD@CAD$@D4:D$CD CD >Dd8C ;DÄ=
+    *   B$0C£8CA >C @C7Cä<, D >Dd8C ;DÄ=C O C,,=DD@CAD$@D4:D$CD 0, C$:C´NDt0DäIC O C£>CÄ?Cä=CT
+    *   Aä4CÔ8CA 8Cr 2C 6CÔ5C”HC,E D BD 0D$5C48Dt5D :C,E Cô@C,,>D 8D$5D$>C" ACäFC„0C´LCÔ>C4> D 0
+
+3.  **Классификация и категории:**
+    *   B ;C 9CB 2â Cã;Cä4CT6CÔ0Dò ?Cã;C„BC„:C_2D'AD$CC00CTB CD;Dò 8CÔDD 0D BD CC£BD4@D² >D=Cä
+    *   A =C ;C,,7 CÔ>D <C BC,,2CÔ>C4> Cô@C 2Ca2Cä3Câ >C 5D ?CTGCT=C,„O D 5C ;C,„,7C FC,„8 C4>D CCDOD A
+    *   B ;CT4D45D" ?Cä4Dt5D :CÔCD$L, DtBCâ BCä;DÄ:Câ 2 2014 C2â =C_DCT4CT@C ;DÄ=Cä< D4@C2CÔ5 C
+    *   A" @CT3C,,>CÔ0C´LCÔ>CÂ 7C :Cä=Cä4C BCT;DÄAD$2CRÂ =C ?D 8CÄ5D_2At0C£>CÔ5 C4>D >CD0 AÄ=
+    *   B ;C 9CB Bâ CÔDD 0D BD CC£BD4@C <Cä;Cä4CT6CÔ>C' ?Cä;C,,BC,,:C, >D$=CäAC„BD O C¢ GC„AC´C C
+    *   A" ?CT@C$>CA AC´CDt0CR r :C : C£>CÄ?Cä=CT=D" <Cä;Cä4CT6CÔ>C' ?Cä;C,BC,,:C,Â :CäBCä@D΄9 Cô@
+
+4.  **Детализация и специфические аспекты:**
+    *   • /C" GC AD$8 D4AD$0CÔ>C$;CT=C„O D0Ct@Dô4Cä2 Cô> Cã?C´0D$5 D$@D44C @C1CBCÔ8C£>C" 1D:
+    *   • /D >C4;C ACä2C =C„O D 0Ct@Dô4Cä2 Cä?C´0D$KD$@D44C8 D$0D 8DD=CâÔ:C$0C´8DD8C£0Dd8Cä=C
+    *   A$<CTAD$5 D BCT<D;CT4D45D" >D$<CTBC,,BDA =CTAD$0C 8C'LCÔ>D BDÂ 2 D >Dd8C ;DÄ=CâÔCC
+    *   A$> C$BCä@Cä< D ;D4GC 5 — C„=DD@C AD$@D4:D$CD C CÄ>C´>CD5Cd=Cä9 Cô>C´8D$8C£8 D ;CT4D
+    *   B ;C 9CB Râ !Ca7CD0CÔ8CR ACäFC,,0C´LCÔKDR AC´CCd1 CD;Dò <Cä;Cä4CT6C, 8 C40D 0CÔBC,,@Ca2C
+    *   • /CôAC,,ECä;Cä3C,GCTAC£8CS2
+    *   • /C05CD0C4>C48Dt5D :C,5;
+    *   • /Dä@C,4C,GCTAC£8CS2
+    *   • /CÔ0D :Cä;C3C„GCTAC£8CRâ
+    *   AälCa7CÔ0Dt5CÔK C£0D$5C4>D 8C, <Cä;Cä4CT6C,Â :CäBCä@D'< Cä:C 7D´2C ND$ADò CD ;D43C,â -D$>
+    *   • /CÄ>C´>CDKCR 8CÔ2C ;C,,4D32
+    *   • /CD5CÄ>C 8C′8Ct>C$0CÔ=D′5 C$>CT=CÔ>D ;D46C IC,,5;
+    *   • /C´8Dd0, CAC$>C>Cd4CT=CÔKCR 8Cr CDt@CT6CD5CÔ8C'A 8D ?Cä;CÔODäIC,„E CÔ0C£0Ct0CÔ8CS2
+    *   • /C´8Dd0, Cô@CäHCT4D,,8CR ;CTGCT=C,,5 CäB CÔ0D :Cä<C=C,,8, D$>C£AC,,:Cä<C=C,8, C ;C£>C4>C´8C
+    *   • /CÄ>C´>CDKCR ACT<DÄ8.
+    *   AD0C'LCÔ5C"HCT5 D 0Ct2C,BC,,5 D >Dd8C ;DÄ=D'ED ;D46C_4C´O CÄ>C'>CD5Cd8, C$8CDK C, ?Cä@D
+    *   B$0C£8CA >C @C7Cä<, C$?CT@C$KCR?D 8 DD>D <C,,@Cä2C =C,„8 CäACÔ>C$=D'E DÔ;CT<CT=D$>C"
+[tgText]
+text:
+/CD5C

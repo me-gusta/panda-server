@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 1031264090
+firstName: Евгения
+lastName: Ковтун
+username: kosmogoni
+[tgText]
+text:
+/start

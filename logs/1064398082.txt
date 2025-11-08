@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1064398082
+firstName: Александра
+lastName: null
+username: myrkuna
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Мед университет 6 курс
+[tgText]
+text:
+/menu

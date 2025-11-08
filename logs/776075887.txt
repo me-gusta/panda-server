@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 776075887
+firstName: Arthur
+lastName: null
+username: null
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Лечебный факультет
+[tgText]
+text:
+/menu

@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 361266318
+firstName: Марина
+lastName: N 💗
+username: nmariii
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Бухгалтер
+[tgText]
+text:
+/menu

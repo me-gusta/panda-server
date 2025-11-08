@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1687124030
+firstName: 9074
+lastName: null
+username: Nikto7698
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+2
+[tgText]
+text:
+/menu

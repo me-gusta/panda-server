@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1202574477
+firstName: Елена
+lastName: Тюрина
+username: Elena_Tyurina_psixolog
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Психолог
+[tgText]
+text:
+/menu

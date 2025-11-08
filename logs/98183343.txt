@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 98183343
+firstName: Kсения
+lastName: Костева
+username: kseniakost
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Главный редактор каталога
+[tgText]
+text:
+/menu

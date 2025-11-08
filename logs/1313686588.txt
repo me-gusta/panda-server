@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 1313686588
+firstName: Виктория
+lastName: null
+username: torisikrets
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+факультет психологии
+[tgText]
+text:
+/menu

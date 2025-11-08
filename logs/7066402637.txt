@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 7066402637
+firstName: Алексей
+lastName: null
+username: aleks10971011739
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard

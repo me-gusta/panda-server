@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 7055292918
+firstName: .
+lastName: null
+username: Sw65657
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5249016408
+firstName: Екатерина
+lastName: null
+username: Nedo_Kat
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+В 10 классе
+[tgText]
+text:
+/menu

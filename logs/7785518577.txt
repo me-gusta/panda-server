@@ -1,0 +1,33 @@
+[UserInfo]
+telegramID: 7785518577
+firstName: Степан
+lastName: Кузнецов
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Давай будем говорить о другом!
+[tgText]
+text:
+/menu
+[tgText]
+text:
+Вот я тебя щас буду отправлять фото а ты будешь показывать похожие?
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mh222syf-rjpvepm0.jpg
+extension: jpg
+caption: 
+[tgText]
+text:
+Ты тогда лох или гей!
+[tgText]
+text:
+Я тебя не  на вижу!
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mh225c09-lm3nc3io.jpg
+extension: jpg
+caption: 

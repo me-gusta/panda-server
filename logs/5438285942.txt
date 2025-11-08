@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5438285942
+firstName: саша
+lastName: null
+username: sashuxxsss
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+социология
+[tgText]
+text:
+/menu

@@ -1,0 +1,13 @@
+[UserInfo]
+telegramID: 981161140
+firstName: Элиана
+lastName: null
+username: null
+[tgText]
+text:
+/start home
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Учусь на стоматологическом факультете. Работаю ассистентом стоматолога

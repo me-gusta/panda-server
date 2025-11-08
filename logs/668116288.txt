@@ -1,0 +1,11 @@
+[UserInfo]
+telegramID: 668116288
+firstName: ❤️Елена❤️
+lastName: null
+username: insta_klukva
+[tgInlineButton]
+callbackData: 1574a8ce
+[tgInlineButton]
+callbackData: onboard
+[tgInlineButton]
+callbackData: onboard

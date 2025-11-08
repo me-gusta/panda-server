@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 5233166677
+firstName: лиза 🙇‍♀️
+lastName: null
+username: hr_lissaw
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+10 класс
+[tgText]
+text:
+/menu

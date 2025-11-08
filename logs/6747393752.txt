@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 6747393752
+firstName: Наталья
+lastName: Алиева
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Фармацевт
+[tgText]
+text:
+/menu

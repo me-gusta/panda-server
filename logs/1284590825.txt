@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 1284590825
+firstName: Людмила
+lastName: null
+username: Ludmilacuca
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Работаю специалистом
+[tgText]
+text:
+Ок)
+[tgText]
+text:
+/menu

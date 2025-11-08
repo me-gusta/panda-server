@@ -1,0 +1,23 @@
+[UserInfo]
+telegramID: 2111395896
+firstName: Наталья
+lastName: null
+username: NatashenkaF
+[tgText]
+text:
+/start sokratit
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Историко - филологический факультет педагогическое направление начальные классы
+[tgText]
+text:
+/menu
+[tgFile]
+cdnURL: https://storage.yandexcloud.net/siteman/mhmnhrxh-lz1zhb3r.pdf
+extension: pdf
+caption: 
+[tgText]
+text:
+сократить текст

@@ -1,0 +1,11 @@
+[UserInfo]
+telegramID: 7218305539
+firstName: REAL
+lastName: XZIBIT
+username: realxzibit
+[tgText]
+text:
+/start
+[tgText]
+text:
+/start

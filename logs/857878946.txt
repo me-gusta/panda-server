@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 857878946
+firstName: Лизка
+lastName: null
+username: elzveta_k
+[tgText]
+text:
+/start konspekt
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Экономический
+[tgText]
+text:
+/menu

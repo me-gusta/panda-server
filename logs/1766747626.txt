@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 1766747626
+firstName: Роза
+lastName: null
+username: rozaliyakir
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

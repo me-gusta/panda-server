@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 5151900995
+firstName: Елена
+lastName: Буланова 🌹
+username: null
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Не работаю
+[tgText]
+text:
+/menu
+[tgText]
+text:
+Ты платный?

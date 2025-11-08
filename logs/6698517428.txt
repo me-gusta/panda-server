@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 6698517428
+firstName: Овсянникова Ульяна
+lastName: null
+username: ovsyannochkaa
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Ш
+[tgText]
+text:
+/menu

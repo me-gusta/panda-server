@@ -1,0 +1,16 @@
+[UserInfo]
+telegramID: 926084144
+firstName: Оксана
+lastName: null
+username: Oksi410
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Косметик эстетист
+[tgText]
+text:
+/menu

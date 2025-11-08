@@ -1,0 +1,8 @@
+[UserInfo]
+telegramID: 7382048595
+firstName: 💗
+lastName: null
+username: anasemenova23
+[tgText]
+text:
+/start

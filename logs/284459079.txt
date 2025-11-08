@@ -1,0 +1,10 @@
+[UserInfo]
+telegramID: 284459079
+firstName: Lidia ✨
+lastName: null
+username: Lidia_Prager
+[tgText]
+text:
+/start
+[tgInlineButton]
+callbackData: onboard

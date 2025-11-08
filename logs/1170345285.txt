@@ -1,0 +1,19 @@
+[UserInfo]
+telegramID: 1170345285
+firstName: Dushka
+lastName: null
+username: Dusshka18
+[tgText]
+text:
+/start konspekt
+[tgInlineButton]
+callbackData: onboard
+[tgText]
+text:
+Социология
+[tgText]
+text:
+/menu
+[tgText]
+text:
+/menu
